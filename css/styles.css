@@ -25,3 +25,7 @@ main > p {
   margin-bottom: 50px;
   padding-top: 100px;
 }
+
+form {
+  padding-top: 50px;
+}
