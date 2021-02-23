@@ -51,3 +51,8 @@ img {
   text-align: right;
   margin-right: 10px;
 }
+
+ul > img {
+  width: 240px;
+  height: 90px;
+}
