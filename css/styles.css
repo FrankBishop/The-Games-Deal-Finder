@@ -1,0 +1,11 @@
+/* body {
+  margin-top: 0px;
+} */
+
+header {
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #284D86;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
