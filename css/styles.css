@@ -1,14 +1,9 @@
-/* body {
-  margin-top: 0px;
-} */
-
 header {
   text-align: center;
   font-family: 'Roboto Condensed', sans-serif;
   background-color: #284D86;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 0px;
 }
 
 main {
@@ -17,7 +12,6 @@ main {
   text-align: center;
   background-color: #ABBECF;
   height: 100vh;
-  margin-top: 0px;
 }
 
 main > p {
