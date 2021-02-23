@@ -13,7 +13,7 @@ header {
 
 main {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   text-align: center;
   background-color: #ABBECF;
   height: 100vh;
@@ -22,7 +22,7 @@ main {
 
 main > p {
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   padding-top: 100px;
 }
 
@@ -40,11 +40,11 @@ footer {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 img {
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
   margin: 20px 20px;
 }

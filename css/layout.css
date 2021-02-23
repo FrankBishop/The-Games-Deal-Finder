@@ -1,0 +1,32 @@
+
+
+@media screen and (min-width: 768px) {
+
+  .head-text {
+    font-size: 50px;
+  }
+
+  .main-text {
+    font-size: 50px;
+  }
+
+
+  .logos {
+  height: 250px;
+  width: 250px;
+}
+
+  .search-form {
+    padding-bottom: 15px;
+  }
+
+  .bottom {
+    font-size: 40px;
+
+  }
+
+  #game-search{
+    width: 500px;
+  }
+
+}
