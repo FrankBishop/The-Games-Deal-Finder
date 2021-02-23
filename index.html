@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +11,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <h1 class="head-text">The Games Deal Finder</h1>
   </header>
   <main>
     <p class="main-text">Just type in the game you want <br>
-    below and we will help you find <br>
-    the cheapest price for it.</p>
-    <form class= "search-form" action="">
+      below and we will help you find <br>
+      the cheapest price for it.</p>
+    <form class="search-form" action="">
       <label for="game-search"></label>
-      <input type="search" id="game-search" name="game-search" size="40">
-      <button>Search</button>
+      <input type="search" id="game-search" name="game-search" size="40" required="required">
+      <button class="search-button" type="submit">Search</button>
     </form>
-    <img class = 'logos' src="images\Steam_icon_logo.svg.png" alt="Steam Logo">
-    <img class = 'logos' src="images\circle-cropped.png" alt="Good Old Games Logo">
+    <div class="logo-images">
+      <img class='logos' src="images\Steam_icon_logo.svg.png" alt="Steam Logo">
+      <img class='logos' src="images\circle-cropped.png" alt="Good Old Games Logo">
+    </div>
     <footer class="bottom">
       <a href="">Home</a>
       <a href="">Watchlist</a>
@@ -33,4 +37,5 @@
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
