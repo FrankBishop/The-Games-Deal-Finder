@@ -29,3 +29,15 @@ main > p {
 form {
   padding-top: 50px;
 }
+
+footer {
+  display: flex;
+  background-color: #284D86;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-around;
+}
