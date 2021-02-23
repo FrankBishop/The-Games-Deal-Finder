@@ -8,4 +8,20 @@ header {
   background-color: #284D86;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+
+main {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 22px;
+  text-align: center;
+  background-color: #ABBECF;
+  height: 100vh;
+  margin-top: 0px;
+}
+
+main > p {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding-top: 100px;
 }
