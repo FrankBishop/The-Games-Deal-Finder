@@ -46,3 +46,8 @@ img {
 .hidden {
   display: none;
 }
+
+.search-move {
+  text-align: right;
+  margin-right: 10px;
+}

@@ -11,4 +11,5 @@ function submitAction(event) {
   searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
+  searchForm.className = "search-move"
 }
