@@ -7,6 +7,12 @@ var storeListings = document.querySelector('.store-listings-results')
 
 var storesList = [];
 
+// var storeIconImages = [
+//   "images/Steam_icon_logo.svg.png",
+//   "images/circle-cropped.png",
+
+// ]
+
 searchForm.addEventListener('submit', submitAction);
 
 function stores() {
@@ -20,6 +26,8 @@ function stores() {
 }
 
 stores();
+
+
 
 function submitAction(event) {
   event.preventDefault();
@@ -97,9 +105,16 @@ function buyNow(event) {
       priceResult.className = "result-row"
       storeListings.appendChild(priceResult);
       var storeId = this.response.deals[i].storeID;
-      priceResult.setAttribute("storeid", storeId)
-      var storeIcon = document.createElement('img')
-      storeIcon.setAttribute('src', 'images/Steam_icon_logo.svg.png');
+      priceResult.setAttribute("storeid", storeId);
+      var storeIcon = document.createElement('img');
+      var iconImage;
+      for(var k = 0; k < storesList.length; k++) {
+        if (storeId === storesList[k].storeID) {
+          iconImage = "https://www.cheapshark.com" + storesList[k].images['banner'];
+          console.log('icon image', iconImage)
+        }
+      }
+      storeIcon.setAttribute('src', iconImage);
       storeIcon.className = 'list-image picture-column';
       priceResult.appendChild(storeIcon);
       var storeName = document.createElement('h3');
@@ -125,5 +140,3 @@ function buyNow(event) {
   });
   prices.send();
 }
-
-
