@@ -5,7 +5,21 @@ var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
 var storeListings = document.querySelector('.store-listings-results')
 
+var storesList = [];
+
 searchForm.addEventListener('submit', submitAction);
+
+function stores() {
+  var stores = new XMLHttpRequest();
+  stores.open("GET", "https://www.cheapshark.com/api/1.0/stores")
+  stores.responseType = 'json';
+  stores.addEventListener('load', function () {
+    storesList = stores.response;
+  });
+  stores.send();
+}
+
+stores();
 
 function submitAction(event) {
   event.preventDefault();
@@ -21,7 +35,6 @@ function submitAction(event) {
   homePageText.className = "hidden";
   searchForm.className = "search-move";
   var searchRequest = searchBar.value;
-  console.log(searchRequest)
   getResults(searchRequest);
 }
 
@@ -71,7 +84,6 @@ function buyNow(event) {
   removeAllChildNodes(storeListings);
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
-  console.log('gameIdResult', gameIdResult)
   var prices = new XMLHttpRequest();
   prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
   prices.responseType = 'json';
@@ -89,11 +101,17 @@ function buyNow(event) {
       storeIcon.className = 'list-image picture-column';
       priceResult.appendChild(storeIcon);
       var storeName = document.createElement('h3');
-      storeName.textContent = 'Steam';
+      for (var j = 0; j < storesList.length; j++) {
+        // if (this.response.deals[i].storeID===storesList[i].storeID){
+        console.log(this.response.deals[i].storeID)
+        console.log(storesList[i].storeName);
+        // }
+      }
+      storeName.textContent = this.response.deals[i].storeID;
       storeName.className = 'title-column'
       priceResult.appendChild(storeName);
       var storePrice = document.createElement('h3');
-      storePrice.textContent = '$19.99';
+      storePrice.textContent = this.response.deals[i].price;
       storePrice.className = 'price-column';
       priceResult.appendChild(storePrice);
       var storeBuyLink = document.createElement('h3');
@@ -105,3 +123,5 @@ function buyNow(event) {
   });
   prices.send();
 }
+
+//need to link store ID to actual store name
