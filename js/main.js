@@ -1,9 +1,8 @@
 var searchForm = document.querySelector('.search-form');
-var searchBar =  document.querySelector('#game-search')
+var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results')
-var resultRow = document.querySelector('.result-row');
 
 
 searchForm.addEventListener('submit', submitAction);
@@ -45,7 +44,7 @@ function getResults(searchRequest) {
       title.textContent = this.response[i].external;
       title.className = 'title-column'
       result.appendChild(title);
-      var cheapestPrice =  document.createElement('h3');
+      var cheapestPrice = document.createElement('h3');
       cheapestPrice.textContent = this.response[i].cheapest
       cheapestPrice.className = 'price-column'
       result.appendChild(cheapestPrice);
@@ -57,4 +56,3 @@ function getResults(searchRequest) {
   });
   search.send()
 }
-

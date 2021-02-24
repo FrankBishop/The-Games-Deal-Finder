@@ -1,17 +1,14 @@
 
 ul {
-  margin-left:  10%;
-  margin-right: 10%;
+  margin-left: 0;
+  margin-right: 5px;
 }
-
 
 li {
   display: flex;
   background-color: #6D6D75;
   height: 100px;
   justify-content: space-around;
-
-
 }
 
 .picture-column {
@@ -31,15 +28,8 @@ li {
   width: 13%;
 }
 
-@media screen and (max-width: 768px) {
-  .search-results {
-    margin-left: 0;
-    margin-right: 5px;
-  }
-  .title-column, .price-column, .buy-column {
+.title-column, .price-column, .buy-column {
     font-size: 18px;
-
-  }
 }
 
 
@@ -53,11 +43,15 @@ li {
     font-size: 50px;
   }
 
-
   .logos {
-  height: 250px;
-  width: 250px;
-}
+    height: 250px;
+    width: 250px;
+  }
+
+.search-results {
+    margin-left:  10%;
+    margin-right: 10%;
+  }
 
   .search-form {
     padding-bottom: 15px;
@@ -65,11 +59,14 @@ li {
 
   .bottom {
     font-size: 40px;
-
   }
 
   #game-search{
     width: 500px;
+  }
+
+  .title-column, .price-column, .buy-column {
+    font-size: 22px;
   }
 
 }
