@@ -51,9 +51,7 @@ function getResults(searchRequest) {
       buyLink.className = 'buy-column'
       result.appendChild(buyLink);
       var buyButton = document.querySelectorAll('.buy-column');
-      // console.log(buyButton)
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
-      // console.log('gameID', gameId);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       console.log('gameTitle', gameTitle)
       for (var j = 0; j < buyButton.length; j++) {
@@ -74,7 +72,17 @@ function buyNow(event) {
   prices.addEventListener('load', function () {
     console.log('status', prices.status);
     console.log('response', prices.response);
+    for (var i = 0; i < this.response.deals.length; i++) {
+      console.log(this.response.deals[i])
+      var priceResult = document.createElement('li');
+      storeListings.appendChild(priceResult);
+      priceResult.className = "result-row"
+      var storeIcon = document.createElement('img')
+      storeIcon.setAttribute('src', 'images/Steam_icon_logo.svg.png');
+      storeIcon.className = 'list-image picture-column';
+      priceResult.appendChild(storeIcon);
+    }
+
   });
   prices.send();
-
 }
