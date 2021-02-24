@@ -8,6 +8,7 @@ searchForm.addEventListener('submit', submitAction);
 
 function submitAction(event) {
   event.preventDefault();
+  searchResults.classList.remove("hidden");
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
@@ -50,6 +51,10 @@ function getResults(searchRequest) {
       result.appendChild(buyLink);
       var buyButton = document.querySelectorAll('.buy-column');
       console.log(buyButton)
+      var gameId = result.setAttribute('gameid', this.response[i].gameID);
+      console.log('gameID', gameId);
+      var gameTitle = result.setAttribute('game-title', this.response[i].external);
+      console.log('gameTitle', gameTitle)
       for (var j=0 ; j < buyButton.length; j++) {
         buyButton[j].addEventListener('click', buyNow)
       }
@@ -60,5 +65,9 @@ function getResults(searchRequest) {
 
 function buyNow (event) {
   console.log('buy now');
-  searchResults.className = "hidden"
+  searchResults.className = "hidden";
+  console.log(this.parentNode);
+  console.log(this.response)
+  console.log(this.parentNode.getAttribute("gameid"));
+  console.log(this.parentNode.getAttribute("game-title"));
 }
