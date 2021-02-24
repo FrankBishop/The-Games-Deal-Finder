@@ -96,18 +96,20 @@ function buyNow(event) {
       var priceResult = document.createElement('li');
       priceResult.className = "result-row"
       storeListings.appendChild(priceResult);
+      var storeId = this.response.deals[i].storeID;
+      priceResult.setAttribute("storeid", storeId)
       var storeIcon = document.createElement('img')
       storeIcon.setAttribute('src', 'images/Steam_icon_logo.svg.png');
       storeIcon.className = 'list-image picture-column';
       priceResult.appendChild(storeIcon);
       var storeName = document.createElement('h3');
+      var storeActualName;
       for (var j = 0; j < storesList.length; j++) {
-        // if (this.response.deals[i].storeID===storesList[i].storeID){
-        console.log(this.response.deals[i].storeID)
-        console.log(storesList[i].storeName);
-        // }
+        if (storeId === storesList[j].storeID) {
+          storeActualName = storesList[j].storeName;
+        }
       }
-      storeName.textContent = this.response.deals[i].storeID;
+      storeName.textContent = storeActualName;
       storeName.className = 'title-column'
       priceResult.appendChild(storeName);
       var storePrice = document.createElement('h3');
@@ -124,4 +126,4 @@ function buyNow(event) {
   prices.send();
 }
 
-//need to link store ID to actual store name
+
