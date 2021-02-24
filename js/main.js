@@ -3,7 +3,7 @@ var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
-var storeListings = document.querySelector('.store-listings')
+var storeListings = document.querySelector('.store-listings-results')
 
 searchForm.addEventListener('submit', submitAction);
 
@@ -26,6 +26,7 @@ function submitAction(event) {
 }
 
 function getResults(searchRequest) {
+  searchResults.className = "search-results";
   var search = new XMLHttpRequest();
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
@@ -53,7 +54,6 @@ function getResults(searchRequest) {
       var buyButton = document.querySelectorAll('.buy-column');
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
-      console.log('gameTitle', gameTitle)
       for (var j = 0; j < buyButton.length; j++) {
         buyButton[j].addEventListener('click', buyNow)
       }
@@ -80,6 +80,7 @@ function buyNow(event) {
     console.log('response', prices.response);
     for (var i = 0; i < this.response.deals.length; i++) {
       console.log(this.response.deals[i])
+      storeListings.className = "search-results";
       var priceResult = document.createElement('li');
       priceResult.className = "result-row"
       storeListings.appendChild(priceResult);
@@ -90,7 +91,7 @@ function buyNow(event) {
       var storeName = document.createElement('h3');
       storeName.textContent = 'Steam';
       storeName.className = 'title-column'
-      storeListings.appendChild(storeName);
+      priceResult.appendChild(storeName);
       var storePrice = document.createElement('h3');
       storePrice.textContent = '$19.99';
       storePrice.className = 'price-column';
