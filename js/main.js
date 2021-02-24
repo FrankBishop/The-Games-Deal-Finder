@@ -81,12 +81,24 @@ function buyNow(event) {
     for (var i = 0; i < this.response.deals.length; i++) {
       console.log(this.response.deals[i])
       var priceResult = document.createElement('li');
-      storeListings.appendChild(priceResult);
       priceResult.className = "result-row"
+      storeListings.appendChild(priceResult);
       var storeIcon = document.createElement('img')
       storeIcon.setAttribute('src', 'images/Steam_icon_logo.svg.png');
       storeIcon.className = 'list-image picture-column';
       priceResult.appendChild(storeIcon);
+      var storeName = document.createElement('h3');
+      storeName.textContent = 'Steam';
+      storeName.className = 'title-column'
+      storeListings.appendChild(storeName);
+      var storePrice = document.createElement('h3');
+      storePrice.textContent = '$19.99';
+      storePrice.className = 'price-column';
+      priceResult.appendChild(storePrice);
+      var storeBuyLink = document.createElement('h3');
+      storeBuyLink.textContent = 'Buy Now'
+      storeBuyLink.className = 'buy-column'
+      priceResult.appendChild(storeBuyLink);
     }
 
   });
