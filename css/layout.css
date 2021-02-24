@@ -7,11 +7,24 @@ ul {
 
 li {
   display: flex;
-  background-color: black;
+  background-color: green;
+  height: 120px;
+  justify-content: space-around;
 
 
 }
 
+.picture-column {
+  width: 33.33%;
+}
+
+.title-column {
+  width: 33.33%;
+}
+
+.price-column {
+  width: 33.33%;
+}
 
 @media screen and (min-width: 768px) {
 

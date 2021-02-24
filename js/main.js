@@ -28,14 +28,19 @@ function getResults(searchRequest) {
     console.log('response', search.response);
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
-      result.textContent = this.response[i].external;
       searchResults.appendChild(result);
       var thumbnail = document.createElement('img');
       thumbnail.setAttribute('src', this.response[i].thumb);
-      searchResults.appendChild(thumbnail);
-      var cheapestPrice =  document.createElement('li');
+      result.appendChild(thumbnail);
+      thumbnail.className = 'list-image picture-column';
+      var title = document.createElement('h3');
+      title.textContent = this.response[i].external;
+      title.className = 'title-column'
+      result.appendChild(title);
+      var cheapestPrice =  document.createElement('h3');
       cheapestPrice.textContent = this.response[i].cheapest
-      searchResults.appendChild(cheapestPrice);
+      cheapestPrice.className = 'price-column'
+      result.appendChild(cheapestPrice);
     }
   });
   search.send()
