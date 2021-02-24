@@ -3,12 +3,19 @@ var searchBar =  document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results')
+var resultRow = document.querySelector('.result-row');
 
 
 searchForm.addEventListener('submit', submitAction);
 
 function submitAction(event) {
   event.preventDefault();
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(searchResults);
   searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
@@ -50,3 +57,4 @@ function getResults(searchRequest) {
   });
   search.send()
 }
+
