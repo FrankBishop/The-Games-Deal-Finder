@@ -1,3 +1,7 @@
+body {
+   background-color: #ABBECF;
+}
+
 header {
   text-align: center;
   font-family: 'Roboto Condensed', sans-serif;
@@ -10,8 +14,7 @@ main {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 24px;
   text-align: center;
-  background-color: #ABBECF;
-  height: 100vh;
+  height: 100%;
 }
 
 main > p {
@@ -29,8 +32,6 @@ footer {
   display: flex;
   background-color: #284D86;
   font-family: 'Roboto Condensed', sans-serif;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;

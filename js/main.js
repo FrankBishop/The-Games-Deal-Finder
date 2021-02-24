@@ -42,6 +42,10 @@ function getResults(searchRequest) {
       cheapestPrice.textContent = this.response[i].cheapest
       cheapestPrice.className = 'price-column'
       result.appendChild(cheapestPrice);
+      var buyLink = document.createElement('h3');
+      buyLink.textContent = 'Buy Now'
+      buyLink.className = 'buy-column'
+      result.appendChild(buyLink);
     }
   });
   search.send()

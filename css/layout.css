@@ -24,15 +24,19 @@ li {
 }
 
 .price-column {
-  width: 33.33%;
+  width: 20%;
+}
+
+.buy-column {
+  width: 13%;
 }
 
 @media screen and (max-width: 768px) {
   .search-results {
     margin-left: 0;
-    margin-right: 0;
+    margin-right: 5px;
   }
-  .title-column, .price-column {
+  .title-column, .price-column, .buy-column {
     font-size: 18px;
 
   }
