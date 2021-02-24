@@ -2,10 +2,11 @@ var searchForm = document.querySelector('.search-form');
 var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
-var searchResults = document.querySelector('.search-results')
-var buyButton = document.querySelector('buy-column')
+var searchResults = document.querySelector('.search-results');
+// var buyButton = document.querySelector('.buy-column');
 
 searchForm.addEventListener('submit', submitAction);
+// buyButton.addEventListener('click', buyNow);
 
 function submitAction(event) {
   event.preventDefault();
@@ -25,13 +26,10 @@ function submitAction(event) {
 }
 
 function getResults(searchRequest) {
-  console.log('this ran');
   var search = new XMLHttpRequest();
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
   search.addEventListener('load', function () {
-    console.log('status', search.status);
-    console.log('response', search.response);
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
@@ -52,7 +50,16 @@ function getResults(searchRequest) {
       buyLink.textContent = 'Buy Now'
       buyLink.className = 'buy-column'
       result.appendChild(buyLink);
+      var buyButton = document.querySelectorAll('.buy-column');
+      console.log(buyButton)
+      for (var j=0 ; j < buyButton.length; j++) {
+        buyButton[j].addEventListener('click', buyNow)
+      }
     }
   });
   search.send()
+}
+
+function buyNow (event) {
+  console.log('buy now')
 }
