@@ -3,7 +3,7 @@ var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results')
-
+var buyButton = document.querySelector('buy-column')
 
 searchForm.addEventListener('submit', submitAction);
 
