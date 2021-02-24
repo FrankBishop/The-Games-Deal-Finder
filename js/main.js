@@ -63,6 +63,12 @@ function getResults(searchRequest) {
 }
 
 function buyNow(event) {
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(storeListings);
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
   console.log('gameIdResult', gameIdResult)
