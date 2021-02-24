@@ -60,3 +60,8 @@ img {
 .search-results > li {
   text-align: left;
 }
+
+.result-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -7,8 +7,8 @@ ul {
 
 li {
   display: flex;
-  background-color: green;
-  height: 120px;
+  background-color: #6D6D75;
+  height: 100px;
   justify-content: space-around;
 
 
@@ -20,11 +20,24 @@ li {
 
 .title-column {
   width: 33.33%;
+  margin-right: 5px;
 }
 
 .price-column {
   width: 33.33%;
 }
+
+@media screen and (max-width: 768px) {
+  .search-results {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .title-column, .price-column {
+    font-size: 18px;
+
+  }
+}
+
 
 @media screen and (min-width: 768px) {
 

@@ -29,6 +29,7 @@ function getResults(searchRequest) {
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
+      result.className = "result-row"
       var thumbnail = document.createElement('img');
       thumbnail.setAttribute('src', this.response[i].thumb);
       result.appendChild(thumbnail);
