@@ -3,6 +3,7 @@ var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
+var storeListings = document.querySelector('.store-listings')
 
 searchForm.addEventListener('submit', submitAction);
 
@@ -50,12 +51,12 @@ function getResults(searchRequest) {
       buyLink.className = 'buy-column'
       result.appendChild(buyLink);
       var buyButton = document.querySelectorAll('.buy-column');
-      console.log(buyButton)
+      // console.log(buyButton)
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
-      console.log('gameID', gameId);
+      // console.log('gameID', gameId);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       console.log('gameTitle', gameTitle)
-      for (var j=0 ; j < buyButton.length; j++) {
+      for (var j = 0; j < buyButton.length; j++) {
         buyButton[j].addEventListener('click', buyNow)
       }
     }
@@ -63,11 +64,17 @@ function getResults(searchRequest) {
   search.send()
 }
 
-function buyNow (event) {
-  console.log('buy now');
+function buyNow(event) {
   searchResults.className = "hidden";
-  console.log(this.parentNode);
-  console.log(this.response)
-  console.log(this.parentNode.getAttribute("gameid"));
-  console.log(this.parentNode.getAttribute("game-title"));
+  var gameIdResult = this.parentNode.getAttribute("gameid");
+  console.log('gameIdResult', gameIdResult)
+  var prices = new XMLHttpRequest();
+  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
+  prices.responseType = 'json';
+  prices.addEventListener('load', function () {
+    console.log('status', prices.status);
+    console.log('response', prices.response);
+  });
+  prices.send();
+
 }
