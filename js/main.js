@@ -4,14 +4,18 @@ var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
 var storeListings = document.querySelector('.store-listings-results');
-var watchlistDiv = document.querySelector('.watchlist-div')
-var watchlistResults = document.querySelector('.watchlist-results')
+var watchlistDiv = document.querySelector('.watchlist-div');
+var watchlistResults = document.querySelector('.watchlist-results');
+var homeLink = document.querySelector('.home-link');
+var watchlistLink = document.querySelector('.watch-link');
 
 
 var storesList = [];
 
 window.addEventListener('DOMContentLoaded', loadWatchlist);
 searchForm.addEventListener('submit', submitAction);
+homeLink.addEventListener('click', goToHome);
+watchlistLink.addEventListener('click', goToWatchlist);
 
 
 function stores() {
@@ -37,7 +41,6 @@ function submitAction(event) {
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
   watchlistDiv.className = "hidden";
-  // removeAllChildNodes(watchlistResults);
   searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
@@ -83,7 +86,6 @@ function getResults(searchRequest) {
       saveButton.className = "save-button";
       saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
-      // var saveButtonClick = document.querySelectorAll('.save-button');
       for (var j = 0; j < buyButton.length; j++) {
         buyButton[j].addEventListener('click', buyNow);
         saveButton.addEventListener('click', saveGame);
@@ -158,8 +160,6 @@ function saveGame(event) {
 }
 
 function addToWatchlist(item) {
-  // watchlistDiv.className = "watchlist-div"
-  // watchlistResults.className = "watchlist-results"
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
   watchResult.className = "result-row"
@@ -188,8 +188,6 @@ function loadWatchlist(event) {
 }
 
 function switchToWatchlist() {
-  // watchlistDiv.className = "watchlist-div";
-  // watchlistResults.className = "watchlist-results";
   watchlistDiv.classList.remove("hidden");
   watchlistResults.classList.remove("hidden");
   searchForm.className = "hidden";
@@ -198,7 +196,13 @@ function switchToWatchlist() {
   searchForm.className = "search-move";
 }
 
+function goToHome(event) {
+  searchForm.className = "search-form";
+  logosRow.className = "logo-images";
+  homePageText.className = "main-text";
+  watchlistDiv.className = "hidden";
+}
 
-//loop through watchlist entries and append data from them to watchlist
-//hide homepage when viewing watchlist, make sure you get taken to watchlist page
-//when saving entry,
+function goToWatchlist(event) {
+  switchToWatchlist()
+}
