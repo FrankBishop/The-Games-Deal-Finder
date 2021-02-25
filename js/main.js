@@ -138,40 +138,38 @@ function buyNow(event) {
 
 function saveGame(event) {
   var target = event.target;
-  console.log(target);
   var listing = target.parentNode;
-  console.log(listing);
-  console.log('it saves');
   searchResults.className = "hidden";
   var gameToSave = {
-    Title: listing.getAttribute("game-title"),
-    Price: listing.getAttribute("cheapest-price"),
-    Image: listing.getAttribute("image")
+    title: listing.getAttribute("game-title"),
+    price: listing.getAttribute("cheapest-price"),
+    image: listing.getAttribute("image")
   }
   console.log(gameToSave)
   gameToSave.entryId = watchlist.nextEntryId;
   watchlist.entries.unshift(gameToSave)
   console.log(watchlist);
   watchlist.nextEntryId++
-  changeToWatchlist()
+  addToWatchlist(gameToSave)
 }
 
-function changeToWatchlist() {
+function addToWatchlist(item) {
+  console.log(item)
   watchlistDiv.className = "watchlist-div"
   watchlistResults.className = "watchlist-results"
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
   watchResult.className = "result-row"
   var watchThumbnail = document.createElement('img');
-  watchThumbnail.setAttribute('src', "filler image");
+  watchThumbnail.setAttribute('src', item.image);
   watchThumbnail.className = 'list-image picture-column';
   watchResult.appendChild(watchThumbnail);
   var watchTitle = document.createElement('h3');
-  watchTitle.textContent = "filler title";
+  watchTitle.textContent = item.title;
   watchTitle.className = 'title-column';
   watchResult.appendChild(watchTitle);
   var watchCheapestPrice = document.createElement('h3');
-  watchCheapestPrice.textContent = "19.99"
+  watchCheapestPrice.textContent = item.price;
   watchCheapestPrice.className = 'price-column'
   watchResult.appendChild(watchCheapestPrice);
   var watchBuyLink = document.createElement('h3');
@@ -182,7 +180,9 @@ function changeToWatchlist() {
 
 function loadWatchlist(event) {
   for (i = 0; i < watchlist.entries.length - 1; i++) {
-    console.log(watchlist.entries[i])
-    // saveGame(watchlist.entries[i]);
+    addToWatchlist(watchlist.entries[i]);
   }
 }
+
+
+//loop through watchlist entries and append data from them to watchlist
