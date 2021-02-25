@@ -4,6 +4,7 @@ var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
 var storeListings = document.querySelector('.store-listings-results')
+var watchlistResults = document.querySelector('.watchlist-results')
 
 
 var storesList = [];
@@ -34,6 +35,7 @@ function submitAction(event) {
   }
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
+  removeAllChildNodes(watchlistResults);
   searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
@@ -150,5 +152,31 @@ function saveGame(event) {
   watchlist.entries.unshift(gameToSave)
   console.log(watchlist);
   watchlist.nextEntryId++
+  changeToWatchlist()
+}
 
+function changeToWatchlist() {
+  var watchHeader = document.createElement('h1');
+  watchHeader.textContent = "Watchlist";
+  watchlistResults.appendChild(watchHeader);
+
+  var watchResult = document.createElement('li');
+  watchlistResults.appendChild(watchResult);
+  watchResult.className = "result-row"
+  var watchThumbnail = document.createElement('img');
+  watchThumbnail.setAttribute('src', "filler image");
+  watchThumbnail.className = 'list-image picture-column';
+  watchResult.appendChild(watchThumbnail);
+  var watchTitle = document.createElement('h3');
+  watchTitle.textContent = "filler title";
+  watchTitle.className = 'title-column';
+  watchResult.appendChild(watchTitle);
+  var watchCheapestPrice = document.createElement('h3');
+  watchCheapestPrice.textContent = "19.99"
+  watchCheapestPrice.className = 'price-column'
+  watchResult.appendChild(watchCheapestPrice);
+  var watchBuyLink = document.createElement('h3');
+  watchBuyLink.textContent = 'Buy Now';
+  watchBuyLink.className = 'buy-column';
+  watchResult.appendChild(watchBuyLink);
 }
