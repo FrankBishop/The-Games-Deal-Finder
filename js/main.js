@@ -7,6 +7,7 @@ var storeListings = document.querySelector('.store-listings-results')
 
 var storesList = [];
 
+
 searchForm.addEventListener('submit', submitAction);
 
 function stores() {
@@ -54,7 +55,7 @@ function getResults(searchRequest) {
       thumbnail.className = 'list-image picture-column';
       var title = document.createElement('h3');
       title.textContent = this.response[i].external;
-      title.className = 'title-column'
+      title.className = 'title-column';
       result.appendChild(title);
       var cheapestPrice = document.createElement('h3');
       cheapestPrice.textContent = this.response[i].cheapest
@@ -90,6 +91,8 @@ function buyNow(event) {
   prices.addEventListener('load', function () {
     for (var i = 0; i < this.response.deals.length; i++) {
       storeListings.className = "search-results";
+      var resultHeader = gameTitle;
+      console.log(resultHeader)
       var priceResult = document.createElement('li');
       priceResult.className = "result-row"
       storeListings.appendChild(priceResult);
