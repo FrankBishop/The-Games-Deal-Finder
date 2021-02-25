@@ -140,13 +140,16 @@ function saveGame(event){
   console.log(listing);
   console.log('it saves');
   searchResults.className = "hidden";
-  console.log()
   var gameToSave = {
     Title: listing.getAttribute("game-title"),
     Price: listing.getAttribute("cheapest-price"),
     Image: listing.getAttribute("image")
   }
   console.log(gameToSave)
+  gameToSave.entryId = watchlist.nextEntryId;
+  watchlist.entries.unshift(gameToSave)
+  console.log(watchlist);
+  watchlist.nextEntryId++
 
 }
 
