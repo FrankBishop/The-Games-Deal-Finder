@@ -11,13 +11,13 @@ var storesList = [];
 searchForm.addEventListener('submit', submitAction);
 
 function stores() {
-  var stores = new XMLHttpRequest();
-  stores.open("GET", "https://www.cheapshark.com/api/1.0/stores")
-  stores.responseType = 'json';
-  stores.addEventListener('load', function () {
-    storesList = stores.response;
+  var storesRequest = new XMLHttpRequest();
+  storesRequest.open("GET", "https://www.cheapshark.com/api/1.0/stores")
+  storesRequest.responseType = 'json';
+  storesRequest.addEventListener('load', function () {
+    storesList = storesRequest.response;
   });
-  stores.send();
+  storesRequest.send();
 }
 
 stores();
@@ -91,8 +91,6 @@ function buyNow(event) {
   prices.addEventListener('load', function () {
     for (var i = 0; i < this.response.deals.length; i++) {
       storeListings.className = "search-results";
-      var resultHeader = gameTitle;
-      console.log(resultHeader)
       var priceResult = document.createElement('li');
       priceResult.className = "result-row"
       storeListings.appendChild(priceResult);
@@ -100,9 +98,12 @@ function buyNow(event) {
       priceResult.setAttribute("storeid", storeId);
       var storeIcon = document.createElement('img');
       var iconImage;
-      for(var k = 0; k < storesList.length; k++) {
-        if (storeId === storesList[k].storeID) {
-          iconImage = "https://www.cheapshark.com" + storesList[k].images['banner'];
+      for(var j = 0; j < storesList.length; j++) {
+        if (storeId === storesList[j].storeID) {
+          iconImage = "https://www.cheapshark.com" + storesList[j].images['banner'];
+        }
+        if (storeId === storesList[j].storeID) {
+          storeActualName = storesList[j].storeName;
         }
       }
       storeIcon.setAttribute('src', iconImage);
@@ -110,11 +111,6 @@ function buyNow(event) {
       priceResult.appendChild(storeIcon);
       var storeName = document.createElement('h2');
       var storeActualName;
-      for (var j = 0; j < storesList.length; j++) {
-        if (storeId === storesList[j].storeID) {
-          storeActualName = storesList[j].storeName;
-        }
-      }
       storeName.textContent = storeActualName;
       storeName.className = 'title-column'
       priceResult.appendChild(storeName);
