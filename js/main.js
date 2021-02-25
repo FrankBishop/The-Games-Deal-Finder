@@ -4,13 +4,13 @@ var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
 var storeListings = document.querySelector('.store-listings-results')
-// var saveButton = document.querySelector('.save-button');
+
 
 var storesList = [];
 
 
 searchForm.addEventListener('submit', submitAction);
-// saveButton.addEventListener('click', saveGame);
+
 
 function stores() {
   var storesRequest = new XMLHttpRequest();
@@ -84,7 +84,7 @@ function getResults(searchRequest) {
       }
     }
   });
-search.send()
+  search.send()
 }
 
 function buyNow(event) {
@@ -133,7 +133,7 @@ function buyNow(event) {
   prices.send();
 }
 
-function saveGame(event){
+function saveGame(event) {
   var target = event.target;
   console.log(target);
   var listing = target.parentNode;
@@ -152,5 +152,3 @@ function saveGame(event){
   watchlist.nextEntryId++
 
 }
-
-//get and set attribute for title and price

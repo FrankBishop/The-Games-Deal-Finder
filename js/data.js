@@ -1,4 +1,5 @@
 /* exported data */
+
 var watchlist = {
   entries: [],
   nextEntryId: 1
@@ -6,7 +7,7 @@ var watchlist = {
 
 window.addEventListener('beforeunload', localStorageSet);
 
-var previousWatchlist = localStorage.getItem('watchlist');
+var previousWatchlist = localStorage.getItem('watchlistData');
 if (previousWatchlist !== null) {
   watchlist = JSON.parse(previousWatchlist);
 }
@@ -14,6 +15,6 @@ if (previousWatchlist !== null) {
 
 function localStorageSet(event) {
   var storedWatchlist = JSON.stringify(watchlist);
-  localStorage.setItem('watchlist', storedWatchlist);
+  localStorage.setItem('watchlistData', storedWatchlist);
   console.log(storedWatchlist)
 }
