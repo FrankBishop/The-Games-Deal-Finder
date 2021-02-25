@@ -36,6 +36,7 @@ function submitAction(event) {
   }
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
+  watchlistDiv.className = "hidden";
   // removeAllChildNodes(watchlistResults);
   searchForm.className = "hidden";
   logosRow.className = "hidden";
