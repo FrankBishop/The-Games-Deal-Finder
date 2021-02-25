@@ -101,8 +101,6 @@ function buyNow(event) {
       for(var j = 0; j < storesList.length; j++) {
         if (storeId === storesList[j].storeID) {
           iconImage = "https://www.cheapshark.com" + storesList[j].images['banner'];
-        }
-        if (storeId === storesList[j].storeID) {
           storeActualName = storesList[j].storeName;
         }
       }
