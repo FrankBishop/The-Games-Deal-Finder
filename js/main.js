@@ -4,12 +4,13 @@ var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
 var storeListings = document.querySelector('.store-listings-results')
-var saveButton = document.querySelector('.save-button');
+// var saveButton = document.querySelector('.save-button');
 
 var storesList = [];
 
 
 searchForm.addEventListener('submit', submitAction);
+// saveButton.addEventListener('click', saveGame);
 
 function stores() {
   var storesRequest = new XMLHttpRequest();
@@ -74,6 +75,8 @@ function getResults(searchRequest) {
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button";
       result.appendChild(saveButton);
+      var saveButtonClick = document.querySelector('.save-button');
+      saveButtonClick.addEventListener('click', saveGame);
       for (var j = 0; j < buyButton.length; j++) {
         buyButton[j].addEventListener('click', buyNow)
       }
@@ -126,4 +129,10 @@ function buyNow(event) {
 
   });
   prices.send();
+}
+
+function saveGame(event){
+  console.log('it saves');
+  searchResults.className = "hidden";
+
 }
