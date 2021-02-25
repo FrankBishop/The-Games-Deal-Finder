@@ -179,10 +179,12 @@ function addToWatchlist(item) {
 }
 
 function loadWatchlist(event) {
-  for (i = 0; i < watchlist.entries.length - 1; i++) {
+  for (i = 0; i < watchlist.entries.length; i++) {
     addToWatchlist(watchlist.entries[i]);
   }
 }
 
 
 //loop through watchlist entries and append data from them to watchlist
+//hide homepage when viewing watchlist, make sure you get taken to watchlist page
+//when saving entry,
