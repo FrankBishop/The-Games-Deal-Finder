@@ -71,18 +71,20 @@ function getResults(searchRequest) {
       var buyButton = document.querySelectorAll('.buy-column');
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
+      var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
+      var imageAttribute = result.setAttribute('image', this.response[i].thumb)
       var saveButton = document.createElement('button');
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button";
       result.appendChild(saveButton);
-      var saveButtonClick = document.querySelector('.save-button');
-      saveButtonClick.addEventListener('click', saveGame);
+      var saveButtonClick = document.querySelectorAll('.save-button');
       for (var j = 0; j < buyButton.length; j++) {
-        buyButton[j].addEventListener('click', buyNow)
+        buyButton[j].addEventListener('click', buyNow);
+        saveButtonClick[j].addEventListener('click', saveGame);
       }
     }
   });
-  search.send()
+search.send()
 }
 
 function buyNow(event) {
@@ -107,7 +109,7 @@ function buyNow(event) {
       priceResult.setAttribute("storeid", storeId);
       var storeIcon = document.createElement('img');
       var iconImage;
-      for(var j = 0; j < storesList.length; j++) {
+      for (var j = 0; j < storesList.length; j++) {
         if (storeId === storesList[j].storeID) {
           iconImage = "https://www.cheapshark.com" + storesList[j].images['banner'];
           storeActualName = storesList[j].storeName;
@@ -132,7 +134,20 @@ function buyNow(event) {
 }
 
 function saveGame(event){
+  var target = event.target;
+  console.log(target);
+  var listing = target.parentNode;
+  console.log(listing);
   console.log('it saves');
   searchResults.className = "hidden";
+  console.log()
+  var gameToSave = {
+    Title: listing.getAttribute("game-title"),
+    Price: listing.getAttribute("cheapest-price"),
+    Image: listing.getAttribute("image")
+  }
+  console.log(gameToSave)
 
 }
+
+//get and set attribute for title and price
