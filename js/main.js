@@ -8,7 +8,7 @@ var watchlistDiv = document.querySelector('.watchlist-div');
 var watchlistResults = document.querySelector('.watchlist-results');
 var homeLink = document.querySelector('.home-link');
 var watchlistLink = document.querySelector('.watch-link');
-
+var watchlistPrices = document.querySelector('.watchlist-prices')
 
 var storesList = [];
 
@@ -190,12 +190,12 @@ function addToWatchlist(item) {
 
 function buyNow2(event) {
   console.log('the test works');
-  function removeAllChildNodes() {
+  function removeAllChildNodes(parent) {
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
     }
   }
-  removeAllChildNodes(storeListings);
+  removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
@@ -204,10 +204,10 @@ function buyNow2(event) {
   prices.responseType = 'json';
   prices.addEventListener('load', function () {
     for (var i = 0; i < this.response.deals.length; i++) {
-      storeListings.className = "search-results";
+      watchlistPrices.className = "watchlist-prices";
       var priceResult = document.createElement('li');
-      priceResult.className = "result-row"
-      storeListings.appendChild(priceResult);
+      priceResult.className = "result-row";
+      watchlistPrices.appendChild(priceResult);
       var storeId = this.response.deals[i].storeID;
       priceResult.setAttribute("storeid", storeId);
       var storeIcon = document.createElement('img');
@@ -257,19 +257,21 @@ function goToHome(event) {
       parent.removeChild(parent.firstChild);
     }
   }
-  removeAllChildNodes(storeListings);
+  // removeAllChildNodes(watchlistPrices);
   searchForm.className = "search-form";
   logosRow.className = "logo-images";
   homePageText.className = "main-text";
   watchlistDiv.className = "hidden";
+  watchlistPrices.className = "hidden"
 }
 
 function goToWatchlist(event) {
-  function removeAllChildNodes() {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
-  removeAllChildNodes(storeListings);
+  // function removeAllChildNodes() {
+  //   while (parent.firstChild) {
+  //     parent.removeChild(parent.firstChild);
+  //   }
+  // }
+  // removeAllChildNodes(watchlistPrices);
+  watchlistPrices.className = "hidden"
   switchToWatchlist()
 }
