@@ -2,13 +2,29 @@ var searchForm = document.querySelector('.search-form');
 var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
-var searchResults = document.querySelector('.search-results')
+var searchResults = document.querySelector('.search-results');
+var storeListings = document.querySelector('.store-listings-results')
+
+var storesList = [];
 
 
 searchForm.addEventListener('submit', submitAction);
 
+function stores() {
+  var storesRequest = new XMLHttpRequest();
+  storesRequest.open("GET", "https://www.cheapshark.com/api/1.0/stores")
+  storesRequest.responseType = 'json';
+  storesRequest.addEventListener('load', function () {
+    storesList = storesRequest.response;
+  });
+  storesRequest.send();
+}
+
+stores();
+
 function submitAction(event) {
   event.preventDefault();
+  searchResults.classList.remove("hidden");
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
@@ -20,18 +36,15 @@ function submitAction(event) {
   homePageText.className = "hidden";
   searchForm.className = "search-move";
   var searchRequest = searchBar.value;
-  console.log(searchRequest)
   getResults(searchRequest);
 }
 
 function getResults(searchRequest) {
-  console.log('this ran');
+  searchResults.className = "search-results";
   var search = new XMLHttpRequest();
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
   search.addEventListener('load', function () {
-    console.log('status', search.status);
-    console.log('response', search.response);
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
@@ -42,7 +55,7 @@ function getResults(searchRequest) {
       thumbnail.className = 'list-image picture-column';
       var title = document.createElement('h3');
       title.textContent = this.response[i].external;
-      title.className = 'title-column'
+      title.className = 'title-column';
       result.appendChild(title);
       var cheapestPrice = document.createElement('h3');
       cheapestPrice.textContent = this.response[i].cheapest
@@ -52,7 +65,59 @@ function getResults(searchRequest) {
       buyLink.textContent = 'Buy Now'
       buyLink.className = 'buy-column'
       result.appendChild(buyLink);
+      var buyButton = document.querySelectorAll('.buy-column');
+      var gameId = result.setAttribute('gameid', this.response[i].gameID);
+      var gameTitle = result.setAttribute('game-title', this.response[i].external);
+      for (var j = 0; j < buyButton.length; j++) {
+        buyButton[j].addEventListener('click', buyNow)
+      }
     }
   });
   search.send()
+}
+
+function buyNow(event) {
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(storeListings);
+  searchResults.className = "hidden";
+  var gameIdResult = this.parentNode.getAttribute("gameid");
+  var prices = new XMLHttpRequest();
+  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
+  prices.responseType = 'json';
+  prices.addEventListener('load', function () {
+    for (var i = 0; i < this.response.deals.length; i++) {
+      storeListings.className = "search-results";
+      var priceResult = document.createElement('li');
+      priceResult.className = "result-row"
+      storeListings.appendChild(priceResult);
+      var storeId = this.response.deals[i].storeID;
+      priceResult.setAttribute("storeid", storeId);
+      var storeIcon = document.createElement('img');
+      var iconImage;
+      for(var j = 0; j < storesList.length; j++) {
+        if (storeId === storesList[j].storeID) {
+          iconImage = "https://www.cheapshark.com" + storesList[j].images['banner'];
+          storeActualName = storesList[j].storeName;
+        }
+      }
+      storeIcon.setAttribute('src', iconImage);
+      storeIcon.className = 'list-image picture-column';
+      priceResult.appendChild(storeIcon);
+      var storeName = document.createElement('h2');
+      var storeActualName;
+      storeName.textContent = storeActualName;
+      storeName.className = 'title-column'
+      priceResult.appendChild(storeName);
+      var storePrice = document.createElement('h2');
+      storePrice.textContent = this.response.deals[i].price;
+      storePrice.className = 'price-column';
+      priceResult.appendChild(storePrice);
+    }
+
+  });
+  prices.send();
 }
