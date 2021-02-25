@@ -3,13 +3,14 @@ var searchBar = document.querySelector('#game-search')
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
-var storeListings = document.querySelector('.store-listings-results')
+var storeListings = document.querySelector('.store-listings-results');
+var watchlistDiv = document.querySelector('.watchlist-div')
 var watchlistResults = document.querySelector('.watchlist-results')
 
 
 var storesList = [];
 
-
+window.addEventListener('DOMContentLoaded', loadWatchlist);
 searchForm.addEventListener('submit', submitAction);
 
 
@@ -156,10 +157,8 @@ function saveGame(event) {
 }
 
 function changeToWatchlist() {
-  var watchHeader = document.createElement('h1');
-  watchHeader.textContent = "Watchlist";
-  watchlistResults.appendChild(watchHeader);
-
+  watchlistDiv.className = "watchlist-div"
+  watchlistResults.className = "watchlist-results"
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
   watchResult.className = "result-row"
@@ -179,4 +178,11 @@ function changeToWatchlist() {
   watchBuyLink.textContent = 'Buy Now';
   watchBuyLink.className = 'buy-column';
   watchResult.appendChild(watchBuyLink);
+}
+
+function loadWatchlist(event) {
+  for (i = 0; i < watchlist.entries.length - 1; i++) {
+    console.log(watchlist.entries[i])
+    // saveGame(watchlist.entries[i]);
+  }
 }
