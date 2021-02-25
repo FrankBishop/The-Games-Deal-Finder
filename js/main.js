@@ -148,7 +148,8 @@ function saveGame(event) {
   var gameToSave = {
     title: listing.getAttribute("game-title"),
     price: listing.getAttribute("cheapest-price"),
-    image: listing.getAttribute("image")
+    image: listing.getAttribute("image"),
+    gameID: listing.getAttribute("gameid")
   }
   console.log(gameToSave)
   gameToSave.entryId = watchlist.nextEntryId;
@@ -162,7 +163,8 @@ function saveGame(event) {
 function addToWatchlist(item) {
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
-  watchResult.className = "result-row"
+  watchResult.className = "result-row";
+  var gameIDSave = watchResult.setAttribute('gameid', item.gameID);
   var watchThumbnail = document.createElement('img');
   watchThumbnail.setAttribute('src', item.image);
   watchThumbnail.className = 'list-image picture-column';
@@ -177,8 +179,61 @@ function addToWatchlist(item) {
   watchResult.appendChild(watchCheapestPrice);
   var watchBuyLink = document.createElement('h3');
   watchBuyLink.textContent = 'Buy Now';
-  watchBuyLink.className = 'buy-column';
+  watchBuyLink.className = 'buy-column save-buy';
   watchResult.appendChild(watchBuyLink);
+  var buyButtons = document.querySelectorAll('.save-buy');
+  for (var i = 0; i < buyButtons.length; i++) {
+    buyButtons[i].addEventListener('click', buyNow2);
+  }
+}
+
+
+function buyNow2(event) {
+  console.log('the test works');
+  function removeAllChildNodes() {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(storeListings);
+  watchlistDiv.className = "hidden";
+  searchResults.className = "hidden";
+  var gameIdResult = this.parentNode.getAttribute("gameid");
+  var prices = new XMLHttpRequest();
+  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
+  prices.responseType = 'json';
+  prices.addEventListener('load', function () {
+    for (var i = 0; i < this.response.deals.length; i++) {
+      storeListings.className = "search-results";
+      var priceResult = document.createElement('li');
+      priceResult.className = "result-row"
+      storeListings.appendChild(priceResult);
+      var storeId = this.response.deals[i].storeID;
+      priceResult.setAttribute("storeid", storeId);
+      var storeIcon = document.createElement('img');
+      var iconImage;
+      for (var j = 0; j < storesList.length; j++) {
+        if (storeId === storesList[j].storeID) {
+          iconImage = "https://www.cheapshark.com" + storesList[j].images['banner'];
+          storeActualName = storesList[j].storeName;
+        }
+      }
+      storeIcon.setAttribute('src', iconImage);
+      storeIcon.className = 'list-image picture-column';
+      priceResult.appendChild(storeIcon);
+      var storeName = document.createElement('h2');
+      var storeActualName;
+      storeName.textContent = storeActualName;
+      storeName.className = 'title-column'
+      priceResult.appendChild(storeName);
+      var storePrice = document.createElement('h2');
+      storePrice.textContent = this.response.deals[i].price;
+      storePrice.className = 'price-column';
+      priceResult.appendChild(storePrice);
+    }
+
+  });
+  prices.send();
 }
 
 function loadWatchlist(event) {
@@ -197,6 +252,12 @@ function switchToWatchlist() {
 }
 
 function goToHome(event) {
+  function removeAllChildNodes() {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(storeListings);
   searchForm.className = "search-form";
   logosRow.className = "logo-images";
   homePageText.className = "main-text";
@@ -204,5 +265,11 @@ function goToHome(event) {
 }
 
 function goToWatchlist(event) {
+  function removeAllChildNodes() {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(storeListings);
   switchToWatchlist()
 }
