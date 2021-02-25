@@ -36,7 +36,7 @@ function submitAction(event) {
   }
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
-  removeAllChildNodes(watchlistResults);
+  // removeAllChildNodes(watchlistResults);
   searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
@@ -51,6 +51,7 @@ function getResults(searchRequest) {
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
   search.addEventListener('load', function () {
+    console.log(search.response)
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
@@ -79,11 +80,12 @@ function getResults(searchRequest) {
       var saveButton = document.createElement('button');
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button";
+      saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
-      var saveButtonClick = document.querySelectorAll('.save-button');
+      // var saveButtonClick = document.querySelectorAll('.save-button');
       for (var j = 0; j < buyButton.length; j++) {
         buyButton[j].addEventListener('click', buyNow);
-        saveButtonClick[j].addEventListener('click', saveGame);
+        saveButton.addEventListener('click', saveGame);
       }
     }
   });
@@ -151,12 +153,12 @@ function saveGame(event) {
   console.log(watchlist);
   watchlist.nextEntryId++
   addToWatchlist(gameToSave)
+  switchToWatchlist()
 }
 
 function addToWatchlist(item) {
-  console.log(item)
-  watchlistDiv.className = "watchlist-div"
-  watchlistResults.className = "watchlist-results"
+  // watchlistDiv.className = "watchlist-div"
+  // watchlistResults.className = "watchlist-results"
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
   watchResult.className = "result-row"
@@ -182,6 +184,17 @@ function loadWatchlist(event) {
   for (i = 0; i < watchlist.entries.length; i++) {
     addToWatchlist(watchlist.entries[i]);
   }
+}
+
+function switchToWatchlist() {
+  // watchlistDiv.className = "watchlist-div";
+  // watchlistResults.className = "watchlist-results";
+  watchlistDiv.classList.remove("hidden");
+  watchlistResults.classList.remove("hidden");
+  searchForm.className = "hidden";
+  logosRow.className = "hidden";
+  homePageText.className = "hidden";
+  searchForm.className = "search-move";
 }
 
 
