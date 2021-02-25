@@ -28,6 +28,10 @@ li {
   width: 13%;
 }
 
+/* .save-column {
+
+} */
+
 .title-column, .price-column, .buy-column {
     font-size: 18px;
 }
@@ -68,5 +72,9 @@ li {
   .title-column, .price-column, .buy-column {
     font-size: 22px;
   }
+
+  /* button {
+    font-size: 18px;
+  } */
 
 }

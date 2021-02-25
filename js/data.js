@@ -1,5 +1,5 @@
 /* exported data */
-var data = {
+var watchlist = {
   entries: [],
   nextEntryId: 1
 };

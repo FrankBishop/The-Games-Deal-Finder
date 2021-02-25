@@ -66,3 +66,9 @@ img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.save-button {
+  background-color: #5C7C84;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+}
