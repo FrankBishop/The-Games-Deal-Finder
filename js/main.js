@@ -9,6 +9,7 @@ var watchlistResults = document.querySelector('.watchlist-results');
 var homeLink = document.querySelector('.home-link');
 var watchlistLink = document.querySelector('.watch-link');
 var watchlistPrices = document.querySelector('.watchlist-prices')
+var deleteModal = document.querySelector('.modal')
 
 var storesList = [];
 
@@ -231,8 +232,10 @@ function buyNow2(event) {
 }
 
 function deleteItem(event) {
-  console.log('it deletes')
+  console.log('it deletes');
+  deleteModal.classList.remove("hidden")
 }
+
 
 
 function loadWatchlist(event) {
