@@ -57,7 +57,6 @@ function getResults(searchRequest) {
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
   search.addEventListener('load', function () {
-    console.log(search.response)
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
@@ -148,10 +147,8 @@ function saveGame(event) {
     image: listing.getAttribute("image"),
     gameID: listing.getAttribute("gameid")
   }
-  console.log(gameToSave)
   gameToSave.entryId = watchlist.nextEntryId;
   watchlist.entries.unshift(gameToSave)
-  console.log(watchlist);
   watchlist.nextEntryId++
   addToWatchlist(gameToSave)
   switchToWatchlist()
@@ -179,8 +176,14 @@ function addToWatchlist(item) {
   watchBuyLink.className = 'save-buy';
   watchResult.appendChild(watchBuyLink);
   var buyButtons = document.querySelectorAll('.save-buy');
+  var deleteLink = document.createElement('h3');
+  deleteLink.textContent = 'Delete from Watchlist';
+  deleteLink.className = 'delete';
+  watchResult.appendChild(deleteLink);
+  var deleteLinks = document.querySelectorAll('.delete')
   for (var i = 0; i < buyButtons.length; i++) {
     buyButtons[i].addEventListener('click', buyNow2);
+    deleteLinks[i].addEventListener('click', deleteItem)
   }
 }
 
@@ -226,6 +229,11 @@ function buyNow2(event) {
   });
   prices.send();
 }
+
+function deleteItem(event) {
+  console.log('it deletes')
+}
+
 
 function loadWatchlist(event) {
   for (i = 0; i < watchlist.entries.length; i++) {
