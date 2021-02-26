@@ -179,7 +179,7 @@ function addToWatchlist(item) {
   watchResult.appendChild(watchCheapestPrice);
   var watchBuyLink = document.createElement('h3');
   watchBuyLink.textContent = 'Buy Now';
-  watchBuyLink.className = 'buy-column save-buy';
+  watchBuyLink.className = 'save-buy';
   watchResult.appendChild(watchBuyLink);
   var buyButtons = document.querySelectorAll('.save-buy');
   for (var i = 0; i < buyButtons.length; i++) {
