@@ -185,7 +185,8 @@ function addToWatchlist(item) {
   deleteLink.textContent = 'Delete from Watchlist';
   deleteLink.className = 'delete';
   watchResult.appendChild(deleteLink);
-  var deleteLinks = document.querySelectorAll('.delete')
+  var deleteLinks = document.querySelectorAll('.delete');
+  var watchlistId = watchResult.setAttribute('entryid', watchlist.nextEntryId)
   for (var i = 0; i < buyButtons.length; i++) {
     buyButtons[i].addEventListener('click', buyNow2);
     deleteLinks[i].addEventListener('click', deleteItem)
@@ -240,11 +241,14 @@ function deleteItem(event) {
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
   var deleteTargetId = deleteTargetParent.getAttribute('gameid');
+  var deleteTargetEntry = deleteTargetParent.getAttribute('entryid')
   var deleteGameListing = document.querySelector('[gameid="' + deleteTargetId + '"]');
   yesButton.addEventListener('click', deleteGame);
   function deleteGame(event) {
-    console.log('yes to delete');
     deleteGameListing.remove();
+    var gameToRemove = -Math.abs(deleteTargetEntry);
+    watchlist.entries.splice(gameToRemove, 1);
+    console.log(watchlist)
     deleteModal.className = "hidden"
   }
 }
