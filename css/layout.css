@@ -18,6 +18,7 @@ li {
 .title-column {
   width: 33.33%;
   margin-right: 5px;
+  text-align: left;
 }
 
 .price-column {
