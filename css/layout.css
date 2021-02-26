@@ -30,40 +30,47 @@ li {
 
 
 .title-column, .price-column, .buy-column {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 767px) {
 
-/* .result-row {
-  display: flex;
-  justify-content: center;
-} */
 .result-row > img {
   width: 20%;
-}
+  }
 
 .title-column {
   padding-left: 2px;
   width: 25%;
-  /* display: flex;
-  justify-content: flex-start; */
-  font-size: 14px;
-}
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  }
 
 .picture-column {
   width: 25%;
-}
+  }
 
-.buy-column {
+.buy-column, .price-column {
+  display: flex;
+  align-items: center;
   width: 10%;
-}
+  }
 
 .save {
   width: 15%;
   padding-left: 2px;
   padding-right: 2px;
+  display: flex;
+  align-items: center;
+    }
+
+.save-buy {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
   }
+
 }
 
 

@@ -30,14 +30,15 @@ function stores() {
 
 stores();
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function submitAction(event) {
   event.preventDefault();
   searchResults.classList.remove("hidden");
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
   removeAllChildNodes(watchlistPrices);
@@ -97,11 +98,6 @@ function getResults(searchRequest) {
 }
 
 function buyNow(event) {
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
   removeAllChildNodes(storeListings);
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
@@ -190,12 +186,6 @@ function addToWatchlist(item) {
 
 
 function buyNow2(event) {
-  console.log('the test works');
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
   removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
   searchResults.className = "hidden";
@@ -253,12 +243,7 @@ function switchToWatchlist() {
 }
 
 function goToHome(event) {
-  function removeAllChildNodes() {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
-  // removeAllChildNodes(watchlistPrices);
+  removeAllChildNodes(searchResults);
   searchForm.className = "search-form";
   logosRow.className = "logo-images";
   homePageText.className = "main-text";
@@ -267,12 +252,7 @@ function goToHome(event) {
 }
 
 function goToWatchlist(event) {
-  function removeAllChildNodes() {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
   removeAllChildNodes(watchlistPrices);
-  watchlistPrices.className = "hidden"
+  removeAllChildNodes(searchResults);
   switchToWatchlist()
 }
