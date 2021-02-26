@@ -24,13 +24,10 @@ li {
   width: 20%;
 }
 
-.buy-column {
+.buy-column, .save-buy {
   width: 13%;
 }
 
-/* .save-column {
-
-} */
 
 .title-column, .price-column, .buy-column {
     font-size: 18px;
@@ -52,7 +49,7 @@ li {
     width: 250px;
   }
 
-  .search-results {
+  .search-results, .watchlist-results, .watchlist-prices {
     margin-left:  10%;
     margin-right: 10%;
   }

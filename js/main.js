@@ -40,6 +40,7 @@ function submitAction(event) {
   }
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
+  removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
   searchForm.className = "hidden";
   logosRow.className = "hidden";
@@ -266,12 +267,12 @@ function goToHome(event) {
 }
 
 function goToWatchlist(event) {
-  // function removeAllChildNodes() {
-  //   while (parent.firstChild) {
-  //     parent.removeChild(parent.firstChild);
-  //   }
-  // }
-  // removeAllChildNodes(watchlistPrices);
+  function removeAllChildNodes() {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+  removeAllChildNodes(watchlistPrices);
   watchlistPrices.className = "hidden"
   switchToWatchlist()
 }
