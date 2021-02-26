@@ -240,37 +240,39 @@ function deleteItem(event) {
   deleteModal.className = "modal"
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
-  var deleteTargetId = deleteTargetParent.getAttribute('gameid');
+  console.log('delete parent', deleteTargetParent)
   var deleteTargetEntry = deleteTargetParent.getAttribute('entryid')
-  var deleteGameListing = document.querySelector('[gameid="' + deleteTargetId + '"]');
+  console.log('delete parent id', deleteTargetEntry)
+  var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
   yesButton.addEventListener('click', deleteGame);
   function deleteGame(event) {
+    console.log('this runs');
     deleteGameListing.remove();
-    var gameToRemove = -Math.abs(deleteTargetEntry);
-    watchlist.entries.splice(gameToRemove, 1);
-    console.log(watchlist)
+    var gameToDelete = 0
+
+    function findIndex(){
+      for(var i=0; i < watchlist.entries.length; i++) {
+        if(watchlist.entries[i].entryId == deleteTargetEntry) {
+          gameToDelete = i + 1
+          console.log ('i', i)
+          console.log('delete entry', deleteTargetEntry)
+        }
+      }
+    }
+    findIndex()
+    console.log('game to delete', gameToDelete)
+    watchlist.entries.splice(gameToDelete, 1)
+    console.log(watchlist.entries);
     deleteModal.className = "hidden"
   }
 }
+
+
 
 function closeModal(event) {
   deleteModal.className = "hidden"
 }
 
-
-
-// function deleteEntry(event) {
-//   var deleteEntry = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
-//   deleteEntry.remove();
-//   var entryToRemove = -Math.abs(data.editing.entryId);
-//   data.entries.splice(entryToRemove, 1);
-//   imageChange.setAttribute('src', 'images/placeholder-image-square.jpg');
-//   deleteModal.className = 'hidden';
-//   deleteButton.className = 'delete-button';
-//   $body.className = 'body';
-//   formField.reset();
-//   changeToEntries();
-// }
 
 
 
