@@ -11,6 +11,7 @@ var watchlistLink = document.querySelector('.watch-link');
 var watchlistPrices = document.querySelector('.watchlist-prices');
 var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
+var yesButton = document.querySelector('.yes-button')
 
 
 var storesList = [];
@@ -236,11 +237,36 @@ function buyNow2(event) {
 
 function deleteItem(event) {
   deleteModal.className = "modal"
+  var deleteTarget = event.target;
+  var deleteTargetParent = deleteTarget.parentNode;
+  var deleteTargetId = deleteTargetParent.getAttribute('gameid');
+  var deleteGameListing = document.querySelector('[gameid="' + deleteTargetId + '"]');
+  yesButton.addEventListener('click', deleteGame);
+  function deleteGame(event) {
+    console.log('yes to delete');
+    deleteGameListing.remove();
+    deleteModal.className = "hidden"
+  }
 }
 
 function closeModal(event) {
   deleteModal.className = "hidden"
 }
+
+
+
+// function deleteEntry(event) {
+//   var deleteEntry = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
+//   deleteEntry.remove();
+//   var entryToRemove = -Math.abs(data.editing.entryId);
+//   data.entries.splice(entryToRemove, 1);
+//   imageChange.setAttribute('src', 'images/placeholder-image-square.jpg');
+//   deleteModal.className = 'hidden';
+//   deleteButton.className = 'delete-button';
+//   $body.className = 'body';
+//   formField.reset();
+//   changeToEntries();
+// }
 
 
 

@@ -2,7 +2,8 @@
 
 var watchlist = {
   entries: [],
-  nextEntryId: 1
+  nextEntryId: 1,
+  // remove = null,
 };
 
 window.addEventListener('beforeunload', localStorageSet);
