@@ -18,18 +18,60 @@ li {
 .title-column {
   width: 33.33%;
   margin-right: 5px;
+  text-align: left;
 }
 
 .price-column {
   width: 20%;
 }
 
-.buy-column {
+.buy-column, .save-buy {
   width: 13%;
 }
 
+
 .title-column, .price-column, .buy-column {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+
+.result-row > img {
+  width: 20%;
+  }
+
+.title-column {
+  padding-left: 2px;
+  width: 25%;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  }
+
+.picture-column {
+  width: 25%;
+  }
+
+.buy-column, .price-column {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  }
+
+.save {
+  width: 15%;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  align-items: center;
+    }
+
+.save-buy {
+    display: flex;
+    align-items: center;
     font-size: 18px;
+  }
+
 }
 
 
@@ -48,7 +90,7 @@ li {
     width: 250px;
   }
 
-  .search-results {
+  .search-results, .watchlist-results, .watchlist-prices {
     margin-left:  10%;
     margin-right: 10%;
   }

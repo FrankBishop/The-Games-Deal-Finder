@@ -17,32 +17,42 @@
     <h1 class="head-text">The Games Deal Finder</h1>
   </header>
   <main>
-    <p class="main-text">Just type in the game you want <br>
-      below and we will help you find <br>
-      the cheapest price for it.</p>
-    <form class="search-form" action="">
-      <label for="game-search"></label>
-      <input type="search" id="game-search" name="game-search" size="40" required="required">
-      <button class="search-button" type="submit">Search</button>
-    </form>
-    <div class="logo-images">
-      <img class='logos' src="images\Steam_icon_logo.svg.png" alt="Steam Logo">
-      <img class='logos' src="images\circle-cropped.png" alt="Good Old Games Logo">
+    <div class="home">
+      <p class="main-text">Just type in the game you want <br>
+        below and we will help you find <br>
+        the cheapest price for it.</p>
+      <form class="search-form" action="">
+        <label for="game-search"></label>
+        <input type="search" id="game-search" name="game-search" size="40" required="required">
+        <button class="search-button" type="submit">Search</button>
+      </form>
+      <div class="logo-images">
+        <img class='logos' src="images\Steam_icon_logo.svg.png" alt="Steam Logo">
+        <img class='logos' src="images\circle-cropped.png" alt="Good Old Games Logo">
+      </div>
     </div>
     <ul class="search-results">
 
     </ul>
 
-    
+
     <ul class="store-listings-results">
 
     </ul>
+    <div class="watchlist-div hidden" id="Watchlist">
+      <h1>Watchlist</h1>
+      <ul class="watchlist-results hidden">
 
+      </ul>
+    </div>
 
+    <ul class="watchlist-prices">
+
+    </ul>
 
     <footer class="bottom">
-      <a href="">Home</a>
-      <a href="">Watchlist</a>
+      <a href="#Home" class="home-link">Home</a>
+      <a href="#Watchlist" class="watch-link">Watchlist</a>
     </footer>
   </main>
   <script src="js/data.js"></script>
