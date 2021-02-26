@@ -8,8 +8,10 @@ var watchlistDiv = document.querySelector('.watchlist-div');
 var watchlistResults = document.querySelector('.watchlist-results');
 var homeLink = document.querySelector('.home-link');
 var watchlistLink = document.querySelector('.watch-link');
-var watchlistPrices = document.querySelector('.watchlist-prices')
-var deleteModal = document.querySelector('.modal')
+var watchlistPrices = document.querySelector('.watchlist-prices');
+var deleteModal = document.querySelector('.modal');
+var noButton = document.querySelector('.no-button');
+
 
 var storesList = [];
 
@@ -17,6 +19,7 @@ window.addEventListener('DOMContentLoaded', loadWatchlist);
 searchForm.addEventListener('submit', submitAction);
 homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
+noButton.addEventListener('click', closeModal);
 
 
 function stores() {
@@ -232,8 +235,11 @@ function buyNow2(event) {
 }
 
 function deleteItem(event) {
-  console.log('it deletes');
-  deleteModal.classList.remove("hidden")
+  deleteModal.className = "modal"
+}
+
+function closeModal(event) {
+  deleteModal.className = "hidden"
 }
 
 
