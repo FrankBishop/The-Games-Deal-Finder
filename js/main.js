@@ -84,7 +84,7 @@ function getResults(searchRequest) {
       var imageAttribute = result.setAttribute('image', this.response[i].thumb)
       var saveButton = document.createElement('button');
       saveButton.textContent = "Save to Watchlist";
-      saveButton.className = "save-button";
+      saveButton.className = "save-button save";
       saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
       for (var j = 0; j < buyButton.length; j++) {
