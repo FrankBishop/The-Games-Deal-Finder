@@ -276,8 +276,10 @@ function closeModal(event) {
 
 
 function loadWatchlist(event) {
+  watchlist.nextEntryId = 0;
   for (i = 0; i < watchlist.entries.length; i++) {
     addToWatchlist(watchlist.entries[i]);
+    watchlist.nextEntryId++
   }
 }
 
