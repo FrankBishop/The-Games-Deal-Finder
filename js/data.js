@@ -2,7 +2,7 @@
 
 var watchlist = {
   entries: [],
-  nextEntryId: 1,
+  nextEntryId: 0,
   gameToRemove: null,
   entryToRemove: null
 };

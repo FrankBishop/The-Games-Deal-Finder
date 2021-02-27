@@ -233,6 +233,8 @@ function buyNow2(event) {
 }
 
 function deleteItem(event) {
+  watchlist.gameToRemove = null;
+  watchlist.entryToRemove = null;
   deleteModal.className = "modal";
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
@@ -247,7 +249,7 @@ function deleteItem(event) {
 
 function deleteGame(event) {
   watchlist.entryToRemove.remove();
-  var gameToDelete = 0
+  var gameToDelete;
   function findIndex() {
     for (var i = 0; i < watchlist.entries.length; i++) {
       if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
