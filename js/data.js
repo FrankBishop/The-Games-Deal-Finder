@@ -18,5 +18,4 @@ if (previousWatchlist !== null) {
 function localStorageSet(event) {
   var storedWatchlist = JSON.stringify(watchlist);
   localStorage.setItem('watchlistData', storedWatchlist);
-  console.log(storedWatchlist)
 }

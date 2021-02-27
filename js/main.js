@@ -13,8 +13,6 @@ var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
 
-
-
 var storesList = [];
 
 window.addEventListener('DOMContentLoaded', loadWatchlist);
@@ -23,7 +21,6 @@ homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
 noButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', deleteGame);
-
 
 function stores() {
   var storesRequest = new XMLHttpRequest();
@@ -238,13 +235,10 @@ function deleteItem(event) {
   deleteModal.className = "modal";
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
-  console.log('delete parent', deleteTargetParent)
   var deleteTargetEntry = deleteTargetParent.getAttribute('entryid')
-  console.log('delete parent id', deleteTargetEntry)
   var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
   watchlist.gameToRemove = deleteTargetEntry;
   watchlist.entryToRemove = deleteGameListing;
-  console.log('data model', deleteTargetEntry)
 }
 
 function deleteGame(event) {
@@ -254,15 +248,11 @@ function deleteGame(event) {
     for (var i = 0; i < watchlist.entries.length; i++) {
       if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
         gameToDelete = i + 1
-        console.log('i', i)
-        // console.log('delete entry', deleteTargetEntry)
       }
     }
   }
   findIndex()
-  console.log('game to delete', gameToDelete)
   watchlist.entries.splice(gameToDelete, 1)
-  console.log(watchlist.entries);
   deleteModal.className = "hidden"
 }
 
@@ -271,9 +261,6 @@ function deleteGame(event) {
 function closeModal(event) {
   deleteModal.className = "hidden"
 }
-
-
-
 
 function loadWatchlist(event) {
   watchlist.nextEntryId = 0;

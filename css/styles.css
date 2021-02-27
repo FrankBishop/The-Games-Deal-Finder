@@ -114,3 +114,9 @@ img {
   box-shadow: 1px 1px 0 #00CC5F;
   border-color: #00CC5F;
 }
+
+.delete {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
