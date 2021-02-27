@@ -3,7 +3,8 @@
 var watchlist = {
   entries: [],
   nextEntryId: 1,
-  gameToRemove: null
+  gameToRemove: null,
+  entryToRemove: null
 };
 
 window.addEventListener('beforeunload', localStorageSet);

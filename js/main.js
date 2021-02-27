@@ -11,7 +11,8 @@ var watchlistLink = document.querySelector('.watch-link');
 var watchlistPrices = document.querySelector('.watchlist-prices');
 var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
-var yesButton = document.querySelector('.yes-button')
+var yesButton = document.querySelector('.yes-button');
+
 
 
 var storesList = [];
@@ -21,6 +22,7 @@ searchForm.addEventListener('submit', submitAction);
 homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
 noButton.addEventListener('click', closeModal);
+yesButton.addEventListener('click', deleteGame);
 
 
 function stores() {
@@ -82,7 +84,7 @@ function getResults(searchRequest) {
       buyLink.textContent = 'Buy Now'
       buyLink.className = 'buy-column'
       result.appendChild(buyLink);
-      var buyButton = document.querySelectorAll('.buy-column');
+      // var buyButton = document.querySelectorAll('.buy-column');
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
@@ -92,10 +94,8 @@ function getResults(searchRequest) {
       saveButton.className = "save-button save";
       saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
-      for (var j = 0; j < buyButton.length; j++) {
-        buyButton[j].addEventListener('click', buyNow);
-        saveButton.addEventListener('click', saveGame);
-      }
+      buyLink.addEventListener('click', buyNow);
+      saveButton.addEventListener('click', saveGame);
     }
   });
   search.send()
@@ -180,17 +180,13 @@ function addToWatchlist(item) {
   watchBuyLink.textContent = 'Buy Now';
   watchBuyLink.className = 'save-buy';
   watchResult.appendChild(watchBuyLink);
-  var buyButtons = document.querySelectorAll('.save-buy');
   var deleteLink = document.createElement('h3');
   deleteLink.textContent = 'Delete from Watchlist';
   deleteLink.className = 'delete';
   watchResult.appendChild(deleteLink);
-  var deleteLinks = document.querySelectorAll('.delete');
+  watchBuyLink.addEventListener('click', buyNow2);
+  deleteLink.addEventListener('click', deleteItem)
   var watchlistId = watchResult.setAttribute('entryid', watchlist.nextEntryId)
-  for (var i = 0; i < buyButtons.length; i++) {
-    buyButtons[i].addEventListener('click', buyNow2);
-    deleteLinks[i].addEventListener('click', deleteItem)
-  }
 }
 
 
@@ -237,34 +233,35 @@ function buyNow2(event) {
 }
 
 function deleteItem(event) {
-  deleteModal.className = "modal"
+  deleteModal.className = "modal";
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
   console.log('delete parent', deleteTargetParent)
   var deleteTargetEntry = deleteTargetParent.getAttribute('entryid')
   console.log('delete parent id', deleteTargetEntry)
   var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
-  yesButton.addEventListener('click', deleteGame);
-  function deleteGame(event) {
-    console.log('this runs');
-    deleteGameListing.remove();
-    var gameToDelete = 0
+  watchlist.gameToRemove = deleteTargetEntry;
+  watchlist.entryToRemove = deleteGameListing;
+  console.log('data model', deleteTargetEntry)
+}
 
-    function findIndex(){
-      for(var i=0; i < watchlist.entries.length; i++) {
-        if(watchlist.entries[i].entryId == deleteTargetEntry) {
-          gameToDelete = i + 1
-          console.log ('i', i)
-          console.log('delete entry', deleteTargetEntry)
-        }
+function deleteGame(event) {
+  watchlist.entryToRemove.remove();
+  var gameToDelete = 0
+  function findIndex() {
+    for (var i = 0; i < watchlist.entries.length; i++) {
+      if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
+        gameToDelete = i + 1
+        console.log('i', i)
+        // console.log('delete entry', deleteTargetEntry)
       }
     }
-    findIndex()
-    console.log('game to delete', gameToDelete)
-    watchlist.entries.splice(gameToDelete, 1)
-    console.log(watchlist.entries);
-    deleteModal.className = "hidden"
   }
+  findIndex()
+  console.log('game to delete', gameToDelete)
+  watchlist.entries.splice(gameToDelete, 1)
+  console.log(watchlist.entries);
+  deleteModal.className = "hidden"
 }
 
 
