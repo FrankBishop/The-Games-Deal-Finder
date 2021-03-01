@@ -84,7 +84,7 @@ img {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal-window {
+/* .modal-window {
   position: fixed;
   top: 350px;
   left: 700px;
@@ -94,7 +94,7 @@ img {
   font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   background-color:#B8BAC8;
-}
+} */
 
 .modal-window > button {
   padding: 15px 40px;
@@ -119,4 +119,16 @@ img {
   font-size: 18px;
   display: flex;
   align-items: center;
+}
+
+.modal-window {
+  position: fixed;
+  top: 350px;
+  left: 100px;
+  z-index: 1;
+  padding: 50px 50px 50px 50px;
+  border-radius: 6px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  background-color:#B8BAC8;
 }
