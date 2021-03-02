@@ -34,7 +34,9 @@ li {
   font-size: 18px;
 }
 
-@media screen and (max-width: 767px) {
+/* iphone SE landscape and iphone X landscape */
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
 
 .result-row > img {
   width: 20%;
@@ -43,7 +45,7 @@ li {
 .title-column {
   padding-left: 2px;
   width: 25%;
-  font-size: 15px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   }
@@ -56,6 +58,7 @@ li {
   display: flex;
   align-items: center;
   width: 10%;
+  font-size: 13px;
   }
 
 .save {
@@ -64,6 +67,8 @@ li {
   padding-right: 2px;
   display: flex;
   align-items: center;
+  font-size: 13px;
+  margin-left: 2px;
   }
 
 .save-buy {
@@ -72,10 +77,114 @@ li {
     font-size: 18px;
   }
 
+.delete {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+}
+
+@media screen and (max-width: 812px) and (orientation: landscape) {
+
+.result-row > img {
+  width: 20%;
+  }
+
+.title-column {
+  padding-left: 2px;
+  width: 25%;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  }
+
+.picture-column {
+  width: 25%;
+  }
+
+.buy-column, .price-column {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  font-size: 13px;
+  }
+
+.save {
+  width: 15%;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-left: 2px;
+  }
+
+.save-buy {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+.delete {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+}
+
+/* ipad landscape */
+
+@media screen and (min-width: 813px) and (max-width: 1024px) {
+
+.result-row > img {
+  width: 20%;
+  }
+
+.title-column {
+  padding-left: 2px;
+  width: 25%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  }
+
+.picture-column {
+  width: 25%;
+  }
+
+.buy-column, .price-column {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  font-size: 16px;
+  }
+
+.save {
+  width: 15%;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-left: 2px;
+  }
+
+.save-buy {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+
+.delete {
+  font-size: 15px;
+  margin-left: 2px;
+}
+
 }
 
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 1025px) {
 
   .head-text {
     font-size: 50px;
@@ -112,3 +221,6 @@ li {
   }
 
 }
+
+/* padding between buttons ipad, iphone x portrait
+smaller text iphone X portrait iphone SE portrait */

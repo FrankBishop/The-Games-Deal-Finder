@@ -69,7 +69,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  /* font-size: 15px; */
 }
 
 .modal {
@@ -104,7 +104,7 @@ img {
 }
 
 .delete {
-  font-size: 16px;
+  /* font-size: 16px; */
   display: flex;
   align-items: center;
   justify-content: center;

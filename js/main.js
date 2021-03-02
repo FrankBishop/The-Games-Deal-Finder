@@ -180,7 +180,7 @@ function addToWatchlist(item) {
   watchResult.appendChild(watchBuyLink);
   var deleteLink = document.createElement('h3');
   deleteLink.textContent = 'Delete from Watchlist';
-  deleteLink.className = 'delete';
+  deleteLink.className = 'delete delete-mini';
   watchResult.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyNow2);
   deleteLink.addEventListener('click', deleteItem)
