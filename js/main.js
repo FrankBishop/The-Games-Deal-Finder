@@ -12,6 +12,7 @@ var watchlistPrices = document.querySelector('.watchlist-prices');
 var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
+var emptyWatch = document.querySelector('.empty')
 
 var storesList = [];
 
@@ -157,6 +158,7 @@ function saveGame(event) {
 }
 
 function addToWatchlist(item) {
+  emptyWatch.className = "hidden";
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
   watchResult.className = "result-row";
@@ -254,6 +256,9 @@ function deleteGame(event) {
   }
   findIndex();
   deleteModal.className = "hidden"
+  if (watchlist.entries.length === 0) {
+    emptyWatch.classList.remove("hidden")
+  }
 }
 
 
@@ -288,6 +293,9 @@ function goToHome(event) {
 }
 
 function goToWatchlist(event) {
+  if (watchlist.entries.length === 0) {
+    emptyWatch.classList.remove("hidden")
+  }
   removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
