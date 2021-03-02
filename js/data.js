@@ -2,7 +2,9 @@
 
 var watchlist = {
   entries: [],
-  nextEntryId: 1
+  nextEntryId: 0,
+  gameToRemove: null,
+  entryToRemove: null
 };
 
 window.addEventListener('beforeunload', localStorageSet);
@@ -16,5 +18,4 @@ if (previousWatchlist !== null) {
 function localStorageSet(event) {
   var storedWatchlist = JSON.stringify(watchlist);
   localStorage.setItem('watchlistData', storedWatchlist);
-  console.log(storedWatchlist)
 }

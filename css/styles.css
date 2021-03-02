@@ -1,17 +1,16 @@
 body {
    background-color: #ABBECF;
+   font-family: 'Roboto Condensed', sans-serif;
 }
 
 header {
   text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
   background-color: #284D86;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 main {
-  font-family: 'Roboto Condensed', sans-serif;
   font-size: 24px;
   text-align: center;
   height: 100%;
@@ -31,7 +30,6 @@ form {
 footer {
   display: flex;
   background-color: #284D86;
-  font-family: 'Roboto Condensed', sans-serif;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -42,10 +40,6 @@ img {
   height: 175px;
   width: 175px;
   margin: 20px 20px;
-}
-
-.hidden {
-  display: none;
 }
 
 .search-move {
@@ -71,4 +65,52 @@ img {
   background-color: #5C7C84;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 15px;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-window > button {
+  padding: 15px 40px;
+  margin-top: 30px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.no-button {
+  background-color: #da5552;
+  box-shadow: 1px 1px 0 #da5552;
+  border-color: #da5552;
+}
+
+.yes-button {
+  background-color: #00CC5F;
+  box-shadow: 1px 1px 0 #00CC5F;
+  border-color: #00CC5F;
+}
+
+.delete {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-window {
+  padding: 50px 50px 50px 50px;
+  border-radius: 6px;
+  text-align: center;
+  background-color:#B8BAC8;
+}
+
+.hidden {
+  display: none;
 }

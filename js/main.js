@@ -8,7 +8,10 @@ var watchlistDiv = document.querySelector('.watchlist-div');
 var watchlistResults = document.querySelector('.watchlist-results');
 var homeLink = document.querySelector('.home-link');
 var watchlistLink = document.querySelector('.watch-link');
-var watchlistPrices = document.querySelector('.watchlist-prices')
+var watchlistPrices = document.querySelector('.watchlist-prices');
+var deleteModal = document.querySelector('.modal');
+var noButton = document.querySelector('.no-button');
+var yesButton = document.querySelector('.yes-button');
 
 var storesList = [];
 
@@ -16,7 +19,8 @@ window.addEventListener('DOMContentLoaded', loadWatchlist);
 searchForm.addEventListener('submit', submitAction);
 homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
-
+noButton.addEventListener('click', closeModal);
+yesButton.addEventListener('click', deleteGame);
 
 function stores() {
   var storesRequest = new XMLHttpRequest();
@@ -57,7 +61,6 @@ function getResults(searchRequest) {
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
   search.addEventListener('load', function () {
-    console.log(search.response)
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
@@ -75,10 +78,9 @@ function getResults(searchRequest) {
       cheapestPrice.className = 'price-column'
       result.appendChild(cheapestPrice);
       var buyLink = document.createElement('h3');
-      buyLink.textContent = 'Buy Now'
-      buyLink.className = 'buy-column'
+      buyLink.textContent = 'Buy Now';
+      buyLink.className = 'buy-column';
       result.appendChild(buyLink);
-      var buyButton = document.querySelectorAll('.buy-column');
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
@@ -88,10 +90,8 @@ function getResults(searchRequest) {
       saveButton.className = "save-button save";
       saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
-      for (var j = 0; j < buyButton.length; j++) {
-        buyButton[j].addEventListener('click', buyNow);
-        saveButton.addEventListener('click', saveGame);
-      }
+      buyLink.addEventListener('click', buyNow);
+      saveButton.addEventListener('click', saveGame);
     }
   });
   search.send()
@@ -148,10 +148,8 @@ function saveGame(event) {
     image: listing.getAttribute("image"),
     gameID: listing.getAttribute("gameid")
   }
-  console.log(gameToSave)
   gameToSave.entryId = watchlist.nextEntryId;
   watchlist.entries.unshift(gameToSave)
-  console.log(watchlist);
   watchlist.nextEntryId++
   addToWatchlist(gameToSave)
   switchToWatchlist()
@@ -178,10 +176,13 @@ function addToWatchlist(item) {
   watchBuyLink.textContent = 'Buy Now';
   watchBuyLink.className = 'save-buy';
   watchResult.appendChild(watchBuyLink);
-  var buyButtons = document.querySelectorAll('.save-buy');
-  for (var i = 0; i < buyButtons.length; i++) {
-    buyButtons[i].addEventListener('click', buyNow2);
-  }
+  var deleteLink = document.createElement('h3');
+  deleteLink.textContent = 'Delete from Watchlist';
+  deleteLink.className = 'delete';
+  watchResult.appendChild(deleteLink);
+  watchBuyLink.addEventListener('click', buyNow2);
+  deleteLink.addEventListener('click', deleteItem)
+  var watchlistId = watchResult.setAttribute('entryid', watchlist.nextEntryId)
 }
 
 
@@ -227,9 +228,44 @@ function buyNow2(event) {
   prices.send();
 }
 
+function deleteItem(event) {
+  watchlist.gameToRemove = null;
+  watchlist.entryToRemove = null;
+  deleteModal.className = "modal";
+  var deleteTarget = event.target;
+  var deleteTargetParent = deleteTarget.parentNode;
+  var deleteTargetEntry = deleteTargetParent.getAttribute('entryid')
+  var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
+  watchlist.gameToRemove = deleteTargetEntry;
+  watchlist.entryToRemove = deleteGameListing;
+}
+
+function deleteGame(event) {
+  watchlist.entryToRemove.remove();
+  var gameToDelete;
+  function findIndex() {
+    for (var i = 0; i < watchlist.entries.length; i++) {
+      if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
+        gameToDelete = i + 1
+      }
+    }
+  }
+  findIndex()
+  watchlist.entries.splice(gameToDelete, 1)
+  deleteModal.className = "hidden"
+}
+
+
+
+function closeModal(event) {
+  deleteModal.className = "hidden"
+}
+
 function loadWatchlist(event) {
+  watchlist.nextEntryId = 0;
   for (i = 0; i < watchlist.entries.length; i++) {
     addToWatchlist(watchlist.entries[i]);
+    watchlist.nextEntryId++
   }
 }
 
