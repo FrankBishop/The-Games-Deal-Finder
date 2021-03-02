@@ -290,5 +290,6 @@ function goToHome(event) {
 function goToWatchlist(event) {
   removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
+  removeAllChildNodes(storeListings);
   switchToWatchlist()
 }
