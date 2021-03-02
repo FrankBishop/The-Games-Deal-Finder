@@ -114,3 +114,7 @@ img {
 .hidden {
   display: none;
 }
+
+.search-button, .save-button, .buy-column, .save-buy, .delete {
+  cursor: pointer;
+}
