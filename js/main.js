@@ -183,7 +183,7 @@ function addToWatchlist(item) {
   watchResult.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyNow2);
   deleteLink.addEventListener('click', deleteItem)
-  var watchlistId = watchResult.setAttribute('entryid', watchlist.nextEntryId)
+  watchResult.setAttribute('entryid', item.entryId)
 }
 
 
@@ -242,11 +242,11 @@ function deleteItem(event) {
 }
 
 function deleteGame(event) {
-  watchlist.entryToRemove.remove();
   var gameToDelete;
   function findIndex() {
     for (var i = 0; i < watchlist.entries.length; i++) {
       if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
+        watchlist.entryToRemove.remove();
         gameToDelete = i;
         watchlist.entries.splice(gameToDelete, 1)
       }
@@ -263,7 +263,6 @@ function closeModal(event) {
 }
 
 function loadWatchlist(event) {
-  watchlist.nextEntryId = 0;
   for (i = 0; i < watchlist.entries.length; i++) {
     addToWatchlist(watchlist.entries[i]);
     watchlist.nextEntryId++
