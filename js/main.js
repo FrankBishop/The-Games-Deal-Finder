@@ -78,10 +78,9 @@ function getResults(searchRequest) {
       cheapestPrice.className = 'price-column'
       result.appendChild(cheapestPrice);
       var buyLink = document.createElement('h3');
-      buyLink.textContent = 'Buy Now'
-      buyLink.className = 'buy-column'
+      buyLink.textContent = 'Buy Now';
+      buyLink.className = 'buy-column';
       result.appendChild(buyLink);
-      // var buyButton = document.querySelectorAll('.buy-column');
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);

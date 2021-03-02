@@ -111,16 +111,4 @@ li {
     font-size: 22px;
   }
 
-  .modal > .modal-window{
-  position: fixed;
-  top: 350px;
-  left: 700px;
-  z-index: 1;
-  padding: 50px 50px 50px 50px;
-  border-radius: 6px;
-  font-family: 'Roboto Condensed', sans-serif;
-  text-align: center;
-  background-color:#B8BAC8;
-  }
-
 }
