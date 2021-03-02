@@ -139,6 +139,7 @@ function buyNow(event) {
 }
 
 function saveGame(event) {
+  watchlist.nextEntryId++
   var target = event.target;
   var listing = target.parentNode;
   searchResults.className = "hidden";
@@ -146,11 +147,11 @@ function saveGame(event) {
     title: listing.getAttribute("game-title"),
     price: listing.getAttribute("cheapest-price"),
     image: listing.getAttribute("image"),
-    gameID: listing.getAttribute("gameid")
+    gameID: listing.getAttribute("gameid"),
+    entryId: watchlist.nextEntryId
   }
   gameToSave.entryId = watchlist.nextEntryId;
   watchlist.entries.unshift(gameToSave)
-  watchlist.nextEntryId++
   addToWatchlist(gameToSave)
   switchToWatchlist()
 }
@@ -246,12 +247,12 @@ function deleteGame(event) {
   function findIndex() {
     for (var i = 0; i < watchlist.entries.length; i++) {
       if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
-        gameToDelete = i + 1
+        gameToDelete = i;
+        watchlist.entries.splice(gameToDelete, 1)
       }
     }
   }
-  findIndex()
-  watchlist.entries.splice(gameToDelete, 1)
+  findIndex();
   deleteModal.className = "hidden"
 }
 
