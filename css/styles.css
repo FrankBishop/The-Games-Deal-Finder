@@ -102,6 +102,8 @@ img {
   font-size: 18px;
   display: flex;
   align-items: center;
+  background-color: #da5552;
+  border-radius: 3px;
 }
 
 .modal-window {
@@ -117,4 +119,27 @@ img {
 
 .search-button, .save-button, .buy-column, .save-buy, .delete {
   cursor: pointer;
+}
+
+.save-buy {
+  height: 64px;
+  background-color: #00CC5F;
+  border-radius: 3px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.buy-column {
+  height: 64px;
+  background-color: #2b9348;
+  border-radius: 3px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
