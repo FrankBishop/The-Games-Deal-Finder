@@ -86,10 +86,9 @@ function getResults(searchRequest) {
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
       var imageAttribute = result.setAttribute('image', this.response[i].thumb)
-      var saveButton = document.createElement('button');
+      var saveButton = document.createElement('h3');
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button save";
-      saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
       buyLink.addEventListener('click', buyNow);
       saveButton.addEventListener('click', saveGame);
