@@ -42,6 +42,10 @@ img {
   margin: 20px 20px;
 }
 
+button {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .search-move {
   text-align: right;
   margin-right: 10px;

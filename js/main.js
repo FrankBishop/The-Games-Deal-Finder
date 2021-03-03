@@ -78,7 +78,7 @@ function getResults(searchRequest) {
       cheapestPrice.textContent = this.response[i].cheapest
       cheapestPrice.className = 'price-column'
       result.appendChild(cheapestPrice);
-      var buyLink = document.createElement('h3');
+      var buyLink = document.createElement('button');
       buyLink.textContent = 'Buy Now';
       buyLink.className = 'buy-column';
       result.appendChild(buyLink);
@@ -86,7 +86,7 @@ function getResults(searchRequest) {
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
       var imageAttribute = result.setAttribute('image', this.response[i].thumb)
-      var saveButton = document.createElement('h3');
+      var saveButton = document.createElement('button');
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button save";
       result.appendChild(saveButton);
@@ -174,11 +174,11 @@ function addToWatchlist(item) {
   watchCheapestPrice.textContent = item.price;
   watchCheapestPrice.className = 'price-column'
   watchResult.appendChild(watchCheapestPrice);
-  var watchBuyLink = document.createElement('h3');
+  var watchBuyLink = document.createElement('button');
   watchBuyLink.textContent = 'Buy Now';
   watchBuyLink.className = 'save-buy';
   watchResult.appendChild(watchBuyLink);
-  var deleteLink = document.createElement('h3');
+  var deleteLink = document.createElement('button');
   deleteLink.textContent = 'Delete from Watchlist';
   deleteLink.className = 'delete delete-mini';
   watchResult.appendChild(deleteLink);
