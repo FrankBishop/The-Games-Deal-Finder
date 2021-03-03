@@ -300,6 +300,10 @@ li {
     width: 250px;
   }
 
+  .search-results {
+  padding-left: 0px;
+  }
+
   .search-results, .watchlist-results, .watchlist-prices {
     margin-left:  10%;
     margin-right: 10%;
