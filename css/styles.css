@@ -45,6 +45,20 @@ img {
 .search-move {
   text-align: right;
   margin-right: 10px;
+  margin-bottom: 25px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#game-search {
+  border: solid #284D86;
+  border-radius: 3px;
+}
+
+.search-button {
+  background-color: #ABBECF;
+  border: solid #284D86;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .list-image {
