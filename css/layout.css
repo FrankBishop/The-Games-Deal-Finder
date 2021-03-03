@@ -79,15 +79,63 @@ li {
 
 .delete {
   font-size: 10px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin: 18px 2px 17.5px 2px;
   }
 
 }
 
-/* ipad portrait */
+@media screen and (max-width: 568px) and (orientation: landscape) {
 
-@media screen and (max-width: 768px) and (orientation: portrait) {
+.result-row > img {
+  width: 20%;
+  }
+
+.title-column {
+  padding-left: 2px;
+  width: 25%;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  }
+
+.picture-column {
+  width: 25%;
+  }
+
+.buy-column, .price-column {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  }
+
+.save {
+  width: 15%;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  margin-left: 2px;
+  margin-right: 2px;
+  }
+
+.save-buy {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  }
+
+.delete {
+  font-size: 10px;
+  margin: 18px 2px 17px 2px;
+  }
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
 
 .result-row > img {
   width: 20%;
@@ -132,8 +180,7 @@ li {
 
 .delete {
   font-size: 15px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin: 18px 2px
   }
 
 .bottom {
@@ -142,7 +189,7 @@ li {
 
 }
 
-@media screen and (max-width: 812px) and (orientation: landscape) {
+@media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
 
 .result-row > img {
   width: 20%;
@@ -185,12 +232,10 @@ li {
 
 .delete {
   font-size: 12px;
-  margin-left: 2px;
-}
+  margin: 18px 2px 17.5px 2px;
+  }
 
 }
-
-/* ipad landscape */
 
 @media screen and (min-width: 813px) and (max-width: 1024px) {
 
@@ -228,19 +273,17 @@ li {
   }
 
 .save-buy {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
   }
 
 .delete {
   font-size: 15px;
-  margin-left: 2px;
-}
+  margin: 19px 2px 18px 2px;
+  }
 
 }
-
-
 
 @media screen and (min-width: 1025px) {
 
@@ -278,7 +321,7 @@ li {
     font-size: 22px;
   }
 
+  .delete {
+    font-size: 16px;
+  }
 }
-
-/* padding between buttons ipad, iphone x portrait
-smaller text iphone X portrait iphone SE portrait */

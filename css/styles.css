@@ -69,7 +69,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* font-size: 15px; */
 }
 
 .modal {
@@ -104,7 +103,6 @@ img {
 }
 
 .delete {
-  /* font-size: 16px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,6 +110,8 @@ img {
   border-radius: 3px;
   width: 15%;
   padding-right: 1px;
+  margin-top: 19px;
+  margin-bottom: 19px;
 }
 
 .modal-window {
