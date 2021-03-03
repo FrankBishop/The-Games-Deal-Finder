@@ -1,7 +1,7 @@
 
 ul {
-  margin-left: 0;
-  margin-right: 20px;
+  margin: auto;
+  padding: 0;
 }
 
 li {
@@ -36,6 +36,11 @@ li {
 
 
 @media screen and (max-width: 375px) and (orientation: portrait) {
+
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 .result-row > img {
   width: 20%;
@@ -85,6 +90,11 @@ li {
 }
 
 @media screen and (max-width: 568px) and (orientation: landscape) {
+
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+  }
 
 .result-row > img {
   width: 20%;
@@ -138,6 +148,11 @@ li {
 }
 
 @media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
+
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 .result-row > img {
   width: 20%;
@@ -193,6 +208,11 @@ li {
 
 @media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
 
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .result-row > img {
   width: 20%;
   }
@@ -241,6 +261,10 @@ li {
 
 @media screen and (min-width: 813px) and (max-width: 1024px) {
 
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .result-row > img {
   width: 20%;
   }
