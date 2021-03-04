@@ -46,7 +46,7 @@ button {
   text-align: right;
   margin-right: 10px;
   margin-bottom: 25px;
-  margin-top: 1px;
+  margin-top: 5px;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -54,12 +54,16 @@ button {
 #game-search {
   border: solid #284D86;
   border-radius: 3px;
+  height: 40px;
 }
 
 .search-button {
   background-color: #ABBECF;
   border: solid #284D86;
   font-family: 'Roboto Condensed', sans-serif;
+  height: 40px;
+  padding-bottom: 3px;
+  box-shadow: 2px 2px 0 #284D86;
 }
 
 .list-image {
@@ -87,6 +91,11 @@ button {
   width: 15%;
 }
 
+.save-button:hover {
+  border: solid black;
+  background-color: #7B9BA3;
+}
+
 .modal {
   display: flex;
   justify-content: center;
@@ -112,10 +121,20 @@ button {
   border-color: #da5552;
 }
 
+.no-button:hover {
+  border: solid black;
+  background-color: #E68B89;;
+}
+
 .yes-button {
   background-color: #00CC5F;
   box-shadow: 1px 1px 0 #00CC5F;
   border-color: #00CC5F;
+}
+
+.yes-button:hover {
+  border: solid black;
+  background-color: #0AFF7C;
 }
 
 .delete {
@@ -128,6 +147,11 @@ button {
   width: 15%;
   margin-top: 18px;
   margin-bottom: 18px;
+}
+
+.delete:hover {
+  border: solid black;
+  background-color: #E68B89;
 }
 
 .modal-window {
@@ -156,6 +180,11 @@ button {
   justify-content: center;
 }
 
+.save-buy:hover {
+  border: solid black;
+  background-color: #0AFF7C;
+}
+
 .buy-column {
   height: 64px;
   background-color: #2b9348;
@@ -165,6 +194,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buy-column:hover {
+  border: solid black;
+  background-color: #41C867;
 }
 
 .buy-column, .save-button {
