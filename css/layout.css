@@ -89,48 +89,6 @@ li {
 
 }
 
-@media screen and (min-width: 1025px) {
-
-  .head-text {
-    font-size: 50px;
-  }
-
-  .main-text {
-    font-size: 50px;
-  }
-
-  .logos {
-    height: 250px;
-    width: 250px;
-  }
-
-  .search-results {
-    padding-left: 0px;
-  }
-
-  .search-results, .watchlist-results, .watchlist-prices {
-    margin-left:  10%;
-    margin-right: 10%;
-  }
-
-  .search-form {
-    padding-bottom: 15px;
-  }
-
-  .bottom {
-    font-size: 40px;
-  }
-
-  #game-search {
-    width: 500px;
-  }
-
-  .title-column, .price-column, .buy-column {
-    font-size: 22px;
-  }
-
-}
-
 @media screen and (max-width: 1024px) {
 
   ul {
@@ -175,5 +133,49 @@ li {
 
   .delete {
     margin: 18px 2px;
+
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+  .head-text {
+    font-size: 50px;
+  }
+
+  .main-text {
+    font-size: 50px;
+  }
+
+  .logos {
+    height: 250px;
+    width: 250px;
+  }
+
+  .search-results {
+    padding-left: 0px;
+  }
+
+  .search-results, .watchlist-results, .watchlist-prices {
+    margin-left:  10%;
+    margin-right: 10%;
+  }
+
+  .search-form {
+    padding-bottom: 15px;
+  }
+
+  .bottom {
+    font-size: 40px;
+  }
+
+  #game-search {
+    width: 500px;
+  }
+
+  .title-column, .price-column, .buy-column {
+    font-size: 22px;
+  }
 
 }
