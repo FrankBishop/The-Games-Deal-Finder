@@ -42,11 +42,6 @@ button {
   font-size: 20px;
 }
 
-button:hover {
-  border: solid black;
-  background-color: #0096c7;
-}
-
 .search-move {
   text-align: right;
   margin-right: 10px;
@@ -92,6 +87,11 @@ button:hover {
   width: 15%;
 }
 
+.save-button:hover {
+  border: solid black;
+  background-color: #7B9BA3;
+}
+
 .modal {
   display: flex;
   justify-content: center;
@@ -117,10 +117,20 @@ button:hover {
   border-color: #da5552;
 }
 
+.no-button:hover {
+  border: solid black;
+  background-color: #E68B89;;
+}
+
 .yes-button {
   background-color: #00CC5F;
   box-shadow: 1px 1px 0 #00CC5F;
   border-color: #00CC5F;
+}
+
+.yes-button:hover {
+  border: solid black;
+  background-color: #0AFF7C;
 }
 
 .delete {
@@ -133,6 +143,11 @@ button:hover {
   width: 15%;
   margin-top: 18px;
   margin-bottom: 18px;
+}
+
+.delete:hover {
+  border: solid black;
+  background-color: #E68B89;
 }
 
 .modal-window {
@@ -161,6 +176,11 @@ button:hover {
   justify-content: center;
 }
 
+.save-buy:hover {
+  border: solid black;
+  background-color: #0AFF7C;
+}
+
 .buy-column {
   height: 64px;
   background-color: #2b9348;
@@ -170,6 +190,11 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buy-column:hover {
+  border: solid black;
+  background-color: #41C867;
 }
 
 .buy-column, .save-button {
