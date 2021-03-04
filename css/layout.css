@@ -37,276 +37,277 @@ li {
 
 @media screen and (max-width: 375px) and (orientation: portrait) {
 
-ul {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.result-row > img {
-  width: 20%;
+  ul {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-.title-column {
-  padding-left: 2px;
-  width: 25%;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
+  .result-row > img {
+    width: 20%;
   }
 
-.picture-column {
-  width: 25%;
+  .title-column {
+    padding-left: 2px;
+    width: 25%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
   }
 
-.buy-column, .price-column {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  font-size: 11px;
+  .picture-column {
+    width: 25%;
   }
 
-.save {
-  width: 15%;
-  padding-left: 2px;
-  padding-right: 2px;
-  display: flex;
-  align-items: center;
-  font-size: 11px;
-  margin-left: 2px;
-  margin-right: 2px;
+  .buy-column, .price-column {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    font-size: 11px;
   }
 
-.save-buy {
+  .save {
+    width: 15%;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .save-buy {
     display: flex;
     align-items: center;
     font-size: 10px;
   }
 
-.delete {
-  font-size: 10px;
-  margin: 18px 2px 17.5px 2px;
+  .delete {
+    font-size: 10px;
+    margin: 18px 2px 17.5px 2px;
   }
 
 }
 
 @media screen and (max-width: 568px) and (orientation: landscape) {
 
-ul {
-  padding-left: 20px;
-  padding-right: 20px;
+  ul {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-.result-row > img {
-  width: 20%;
+  .result-row > img {
+    width: 20%;
   }
 
-.title-column {
-  padding-left: 2px;
-  width: 25%;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
+  .title-column {
+    padding-left: 2px;
+    width: 25%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
   }
 
-.picture-column {
-  width: 25%;
+  .picture-column {
+    width: 25%;
   }
 
-.buy-column, .price-column {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  font-size: 11px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  .buy-column, .price-column {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-.save {
-  width: 15%;
-  padding-left: 2px;
-  padding-right: 2px;
-  display: flex;
-  align-items: center;
-  font-size: 11px;
-  margin-left: 2px;
-  margin-right: 2px;
+  .save {
+    width: 15%;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin-left: 2px;
+    margin-right: 2px;
   }
 
-.save-buy {
-  display: flex;
-  align-items: center;
-  font-size: 10px;
+  .save-buy {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
   }
 
-.delete {
-  font-size: 10px;
-  margin: 18px 2px 18px 2px;
-  padding-right: 0px;
-  padding-left: 0px;
+  .delete {
+    font-size: 10px;
+    margin: 18px 2px 18px 2px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
 }
 
 @media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
 
-ul {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.result-row > img {
-  width: 20%;
+  ul {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-.title-column {
-  padding-left: 2px;
-  width: 25%;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
+  .result-row > img {
+    width: 20%;
   }
 
-.picture-column {
-  width: 25%;
+  .title-column {
+    padding-left: 2px;
+    width: 25%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
   }
 
-.buy-column, .price-column {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  font-size: 15px;
+  .picture-column {
+    width: 25%;
   }
 
-.save {
-  width: 15%;
-  padding-left: 2px;
-  padding-right: 2px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-size: 15px;
-  margin-left: 2px;
-  margin-right: 2px;
+  .buy-column, .price-column {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    font-size: 15px;
   }
 
-.save-buy {
+  .save {
+    width: 15%;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .save-buy {
     display: flex;
     align-items: center;
     font-size: 15px;
   }
 
-.delete {
-  font-size: 15px;
-  margin: 18px 2px
+  .delete {
+    font-size: 15px;
+    margin: 18px 2px
   }
 
-.bottom {
-  margin-top: 250px;
-}
+  .bottom {
+    margin-top: 250px;
+  }
 
 }
 
 @media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
 
-ul {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.result-row > img {
-  width: 20%;
+  ul {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-.title-column {
-  padding-left: 2px;
-  width: 25%;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
+  .result-row > img {
+    width: 20%;
   }
 
-.picture-column {
-  width: 25%;
+  .title-column {
+    padding-left: 2px;
+    width: 25%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
   }
 
-.buy-column, .price-column {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  font-size: 13px;
+  .picture-column {
+    width: 25%;
   }
 
-.save {
-  width: 15%;
-  padding-left: 2px;
-  padding-right: 2px;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  margin-left: 2px;
+  .buy-column, .price-column {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    font-size: 13px;
   }
 
-.save-buy {
+  .save {
+    width: 15%;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-left: 2px;
+  }
+
+  .save-buy {
     display: flex;
     align-items: center;
     font-size: 18px;
   }
 
-.delete {
-  font-size: 18px;
-  margin: 18px 2px 17.5px 2px;
+  .delete {
+    font-size: 18px;
+    margin: 18px 2px 17.5px 2px;
   }
 
 }
 
 @media screen and (min-width: 813px) and (max-width: 1024px) {
 
-ul {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.result-row > img {
-  width: 20%;
+  ul {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-.title-column {
-  padding-left: 2px;
-  width: 25%;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
+  .result-row > img {
+    width: 20%;
   }
 
-.picture-column {
-  width: 25%;
+  .title-column {
+    padding-left: 2px;
+    width: 25%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
   }
 
-.buy-column, .price-column {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  font-size: 16px;
+  .picture-column {
+    width: 25%;
   }
 
-.save {
-  width: 15%;
-  padding-left: 2px;
-  padding-right: 2px;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  margin-left: 2px;
+  .buy-column, .price-column {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    font-size: 16px;
   }
 
-.save-buy {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
+  .save {
+    width: 15%;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 2px;
   }
 
-.delete {
-  font-size: 15px;
-  margin: 19px 2px 18px 2px;
+  .save-buy {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  .delete {
+    font-size: 15px;
+    margin: 19px 2px 18px 2px;
   }
 
 }
@@ -327,7 +328,7 @@ ul {
   }
 
   .search-results {
-  padding-left: 0px;
+    padding-left: 0px;
   }
 
   .search-results, .watchlist-results, .watchlist-prices {
@@ -350,4 +351,5 @@ ul {
   .title-column, .price-column, .buy-column {
     font-size: 22px;
   }
+
 }
