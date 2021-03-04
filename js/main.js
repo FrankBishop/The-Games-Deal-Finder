@@ -289,6 +289,8 @@ function switchToWatchlist() {
 }
 
 function goToHome(event) {
+  removeAllChildNodes(storeListings);
+  removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
   searchForm.className = "search-form";
   logosRow.className = "logo-images";
