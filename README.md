@@ -18,7 +18,7 @@ A live demo of the application can be found here: https://frankbishop.github.io/
 
 ## What I learned
 
-This was the first project that I built from the ground up.  I learned how to plan out and application to save time on coding later.  I also learned how to implement Ajax calls in my projects.  I also continued to master my HTML, CSS, and JavaScript Skills.
+This was the first project that I built from the ground up.  I learned how to plan out an application to save time on coding later.  I also learned how to implement Ajax calls in my projects.  I also continued to master my HTML, CSS, and JavaScript Skills.
 
 
 ## Screenshots
