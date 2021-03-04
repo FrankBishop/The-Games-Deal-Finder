@@ -12,6 +12,7 @@ var watchlistPrices = document.querySelector('.watchlist-prices');
 var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
+var emptyWatch = document.querySelector('.empty')
 
 var storesList = [];
 
@@ -77,7 +78,7 @@ function getResults(searchRequest) {
       cheapestPrice.textContent = this.response[i].cheapest
       cheapestPrice.className = 'price-column'
       result.appendChild(cheapestPrice);
-      var buyLink = document.createElement('h3');
+      var buyLink = document.createElement('button');
       buyLink.textContent = 'Buy Now';
       buyLink.className = 'buy-column';
       result.appendChild(buyLink);
@@ -88,7 +89,6 @@ function getResults(searchRequest) {
       var saveButton = document.createElement('button');
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button save";
-      saveButton.setAttribute('type', 'button');
       result.appendChild(saveButton);
       buyLink.addEventListener('click', buyNow);
       saveButton.addEventListener('click', saveGame);
@@ -157,6 +157,7 @@ function saveGame(event) {
 }
 
 function addToWatchlist(item) {
+  emptyWatch.className = "hidden";
   var watchResult = document.createElement('li');
   watchlistResults.appendChild(watchResult);
   watchResult.className = "result-row";
@@ -173,13 +174,13 @@ function addToWatchlist(item) {
   watchCheapestPrice.textContent = item.price;
   watchCheapestPrice.className = 'price-column'
   watchResult.appendChild(watchCheapestPrice);
-  var watchBuyLink = document.createElement('h3');
+  var watchBuyLink = document.createElement('button');
   watchBuyLink.textContent = 'Buy Now';
   watchBuyLink.className = 'save-buy';
   watchResult.appendChild(watchBuyLink);
-  var deleteLink = document.createElement('h3');
-  deleteLink.textContent = 'Delete from Watchlist';
-  deleteLink.className = 'delete';
+  var deleteLink = document.createElement('button');
+  deleteLink.textContent = 'Delete';
+  deleteLink.className = 'delete delete-mini';
   watchResult.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyNow2);
   deleteLink.addEventListener('click', deleteItem)
@@ -254,6 +255,9 @@ function deleteGame(event) {
   }
   findIndex();
   deleteModal.className = "hidden"
+  if (watchlist.entries.length === 0) {
+    emptyWatch.classList.remove("hidden")
+  }
 }
 
 
@@ -288,6 +292,9 @@ function goToHome(event) {
 }
 
 function goToWatchlist(event) {
+  if (watchlist.entries.length === 0) {
+    emptyWatch.classList.remove("hidden")
+  }
   removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);

@@ -1,7 +1,7 @@
 
 ul {
-  margin-left: 0;
-  margin-right: 20px;
+  margin: auto;
+  padding: 0;
 }
 
 li {
@@ -34,48 +34,111 @@ li {
   font-size: 18px;
 }
 
-@media screen and (max-width: 767px) {
 
-.result-row > img {
-  width: 20%;
+@media screen and (max-width: 375px) and (orientation: portrait) {
+
+  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
+    font-size: 11px;
   }
 
-.title-column {
-  padding-left: 2px;
-  width: 25%;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  }
-
-.picture-column {
-  width: 25%;
-  }
-
-.buy-column, .price-column {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  }
-
-.save {
-  width: 15%;
-  padding-left: 2px;
-  padding-right: 2px;
-  display: flex;
-  align-items: center;
-    }
-
-.save-buy {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+  .save {
+    margin-right: 2px;
   }
 
 }
 
+@media screen and (max-width: 568px) and (orientation: landscape) {
 
-@media screen and (min-width: 768px) {
+  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
+    font-size: 11px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
+
+  .buy-column, .price-column, .title-column, .save, .save-buy, .delete, .title-column {
+    font-size: 15px;
+  }
+
+  .bottom {
+    margin-top: 100px;
+  }
+
+  .logos {
+    margin-top: 100px;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
+
+  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
+    font-size: 13px;
+  }
+
+}
+
+@media screen and (min-width: 813px) and (max-width: 1024px) {
+
+  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
+    font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  ul {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .result-row > img {
+    width: 20%;
+  }
+
+  .title-column {
+    padding-left: 2px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+  }
+
+  .picture-column {
+    width: 25%;
+  }
+
+   .buy-column, .price-column {
+    display: flex;
+    align-items: center;
+    width: 10%;
+  }
+
+  .save {
+    width: 15%;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+  }
+
+   .save-buy {
+    display: flex;
+    align-items: center;
+  }
+
+  .delete {
+    margin: 18px 2px;
+
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
 
   .head-text {
     font-size: 50px;
@@ -88,6 +151,10 @@ li {
   .logos {
     height: 250px;
     width: 250px;
+  }
+
+  .search-results {
+    padding-left: 0px;
   }
 
   .search-results, .watchlist-results, .watchlist-prices {
@@ -103,7 +170,7 @@ li {
     font-size: 40px;
   }
 
-  #game-search{
+  #game-search {
     width: 500px;
   }
 
