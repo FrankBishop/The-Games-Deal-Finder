@@ -289,12 +289,15 @@ function switchToWatchlist() {
 }
 
 function goToHome(event) {
+  removeAllChildNodes(storeListings);
+  removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
   searchForm.className = "search-form";
   logosRow.className = "logo-images";
   homePageText.className = "main-text";
   watchlistDiv.className = "hidden";
-  watchlistPrices.className = "hidden"
+  watchlistPrices.className = "hidden";
+  searchResults.className= "hidden"
 }
 
 function goToWatchlist(event) {
