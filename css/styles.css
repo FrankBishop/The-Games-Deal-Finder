@@ -46,7 +46,7 @@ button {
   text-align: right;
   margin-right: 10px;
   margin-bottom: 25px;
-  margin-top: 1px;
+  margin-top: 5px;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -54,12 +54,16 @@ button {
 #game-search {
   border: solid #284D86;
   border-radius: 3px;
+  height: 40px;
 }
 
 .search-button {
   background-color: #ABBECF;
   border: solid #284D86;
   font-family: 'Roboto Condensed', sans-serif;
+  height: 40px;
+  padding-bottom: 3px;
+  box-shadow: 2px 2px 0 #284D86;
 }
 
 .list-image {
