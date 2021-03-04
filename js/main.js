@@ -12,7 +12,8 @@ var watchlistPrices = document.querySelector('.watchlist-prices');
 var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
-var emptyWatch = document.querySelector('.empty')
+var emptyWatch = document.querySelector('.empty');
+var loadingSpinner = document.querySelector('.loading-spinner')
 
 var storesList = [];
 
@@ -57,11 +58,13 @@ function submitAction(event) {
 }
 
 function getResults(searchRequest) {
+  loadingSpinner.classList.remove('hidden');
   searchResults.className = "search-results";
   var search = new XMLHttpRequest();
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
   search.responseType = 'json';
   search.addEventListener('load', function () {
+    loadingSpinner.classList.add('hidden');
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
@@ -98,6 +101,7 @@ function getResults(searchRequest) {
 }
 
 function buyNow(event) {
+  loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(storeListings);
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
@@ -105,6 +109,7 @@ function buyNow(event) {
   prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
   prices.responseType = 'json';
   prices.addEventListener('load', function () {
+    loadingSpinner.classList.add('hidden');
     for (var i = 0; i < this.response.deals.length; i++) {
       storeListings.className = "search-results";
       var priceResult = document.createElement('li');
@@ -159,7 +164,7 @@ function saveGame(event) {
 function addToWatchlist(item) {
   emptyWatch.className = "hidden";
   var watchResult = document.createElement('li');
-  watchlistResults.appendChild(watchResult);
+  watchlistResults.prepend(watchResult);
   watchResult.className = "result-row";
   var gameIDSave = watchResult.setAttribute('gameid', item.gameID);
   var watchThumbnail = document.createElement('img');
@@ -189,6 +194,7 @@ function addToWatchlist(item) {
 
 
 function buyNow2(event) {
+  loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
   searchResults.className = "hidden";
@@ -197,6 +203,7 @@ function buyNow2(event) {
   prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
   prices.responseType = 'json';
   prices.addEventListener('load', function () {
+    loadingSpinner.classList.add('hidden');
     for (var i = 0; i < this.response.deals.length; i++) {
       watchlistPrices.className = "watchlist-prices";
       var priceResult = document.createElement('li');
@@ -225,7 +232,6 @@ function buyNow2(event) {
       storePrice.className = 'price-column';
       priceResult.appendChild(storePrice);
     }
-
   });
   prices.send();
 }
@@ -267,7 +273,7 @@ function closeModal(event) {
 }
 
 function loadWatchlist(event) {
-  for (i = 0; i < watchlist.entries.length; i++) {
+  for (i = watchlist.entries.length - 1; i >= 0; i--) {
     addToWatchlist(watchlist.entries[i]);
     watchlist.nextEntryId++
   }
