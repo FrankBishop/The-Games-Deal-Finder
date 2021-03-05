@@ -65,6 +65,11 @@ function getResults(searchRequest) {
   search.responseType = 'json';
   search.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
+    if(this.response.length === 0){
+      var noResults = document.createElement('h1');
+      noResults.textContent = "There are no results for your search"
+      searchResults.appendChild(noResults)
+    } 
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
