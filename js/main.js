@@ -24,7 +24,8 @@ homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
 noButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', deleteGame);
-window.addEventListener('DOMContentLoaded', focus)
+window.addEventListener('DOMContentLoaded', focus);
+backButton.addEventListener('click', goBack);
 
 function focus() {
   searchBar.toFocus()
@@ -115,8 +116,9 @@ function getResults(searchRequest) {
 
 function buyNow(event) {
   backButton.classList.remove('hidden')
-  loadingSpinner.classList.remove('hidden');
-  removeAllChildNodes(storeListings);
+  // loadingSpinner.classList.remove('hidden');
+  storeListings.classList.add('hidden')
+  // removeAllChildNodes(storeListings);
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
   var prices = new XMLHttpRequest();
@@ -289,7 +291,6 @@ function closeModal(event) {
 }
 
 function loadWatchlist(event) {
-  // searchBar.toFocus()
   for (i = watchlist.entries.length - 1; i >= 0; i--) {
     addToWatchlist(watchlist.entries[i]);
     watchlist.nextEntryId++
@@ -327,4 +328,9 @@ function goToWatchlist(event) {
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
   switchToWatchlist()
+}
+
+function goBack(event){
+    backButton.classList.add('hidden')
+    searchResults.className = "search-results";
 }
