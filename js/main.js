@@ -13,7 +13,8 @@ var deleteModal = document.querySelector('.modal');
 var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
 var emptyWatch = document.querySelector('.empty');
-var loadingSpinner = document.querySelector('.loading-spinner')
+var loadingSpinner = document.querySelector('.loading-spinner');
+var backButton =  document.querySelector('.back')
 
 var storesList = [];
 
@@ -23,6 +24,11 @@ homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
 noButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', deleteGame);
+window.addEventListener('DOMContentLoaded', focus)
+
+function focus() {
+  searchBar.toFocus()
+}
 
 function stores() {
   var storesRequest = new XMLHttpRequest();
@@ -59,6 +65,7 @@ function submitAction(event) {
 }
 
 function getResults(searchRequest) {
+  backButton.classList.add('hidden')
   loadingSpinner.classList.remove('hidden');
   searchResults.className = "search-results";
   var search = new XMLHttpRequest();
@@ -107,6 +114,7 @@ function getResults(searchRequest) {
 }
 
 function buyNow(event) {
+  backButton.classList.remove('hidden')
   loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(storeListings);
   searchResults.className = "hidden";
@@ -200,6 +208,8 @@ function addToWatchlist(item) {
 
 
 function buyFromWatch(event) {
+  backButton.classList.remove('hidden')
+  loadingSpinner.classList.remove('hidden');
   loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
@@ -279,6 +289,7 @@ function closeModal(event) {
 }
 
 function loadWatchlist(event) {
+  // searchBar.toFocus()
   for (i = watchlist.entries.length - 1; i >= 0; i--) {
     addToWatchlist(watchlist.entries[i]);
     watchlist.nextEntryId++
@@ -295,6 +306,7 @@ function switchToWatchlist() {
 }
 
 function goToHome(event) {
+  backButton.classList.add('hidden');
   removeAllChildNodes(storeListings);
   removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
@@ -307,6 +319,7 @@ function goToHome(event) {
 }
 
 function goToWatchlist(event) {
+  backButton.classList.add('hidden');
   if (watchlist.entries.length === 0) {
     emptyWatch.classList.remove("hidden")
   }
