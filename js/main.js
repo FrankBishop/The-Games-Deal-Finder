@@ -187,13 +187,13 @@ function addToWatchlist(item) {
   deleteLink.textContent = 'Delete';
   deleteLink.className = 'delete delete-mini';
   watchResult.appendChild(deleteLink);
-  watchBuyLink.addEventListener('click', buyNow2);
+  watchBuyLink.addEventListener('click', buyFromWatch);
   deleteLink.addEventListener('click', deleteItem)
   watchResult.setAttribute('entryid', item.entryId)
 }
 
 
-function buyNow2(event) {
+function buyFromWatch(event) {
   loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
