@@ -54,6 +54,7 @@ function submitAction(event) {
   homePageText.className = "hidden";
   searchForm.className = "search-move";
   var searchRequest = searchBar.value;
+  searchForm.reset()
   getResults(searchRequest);
 }
 
@@ -69,7 +70,7 @@ function getResults(searchRequest) {
       var noResults = document.createElement('h1');
       noResults.textContent = "There are no results for your search"
       searchResults.appendChild(noResults)
-    } 
+    }
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
