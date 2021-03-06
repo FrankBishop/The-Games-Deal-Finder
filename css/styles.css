@@ -8,6 +8,7 @@ header {
   background-color: #284D86;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: #e5e5e5;
 }
 
 main {
@@ -34,7 +35,6 @@ footer {
 img {
   height: 175px;
   width: 175px;
-  margin: 20px 20px;
 }
 
 button {
@@ -52,8 +52,8 @@ button {
 }
 
 #game-search {
-  border: solid #284D86;
-  border-radius: 3px;
+  border: solid #e5e5e5;
+  border-radius: 10px;
   height: 40px;
 }
 
@@ -68,7 +68,7 @@ button {
 
 .list-image {
   width: 120px;
-  height: 45px;
+  height: 100%;
 }
 
 .search-results > li {
@@ -92,7 +92,7 @@ button {
 }
 
 .save-button:hover {
-  border: solid black;
+  border: solid #7B9BA3;
   background-color: #7B9BA3;
 }
 
@@ -122,8 +122,8 @@ button {
 }
 
 .no-button:hover {
-  border: solid black;
-  background-color: #E68B89;;
+  border: solid  #E68B89;
+  background-color: #E68B89;
 }
 
 .yes-button {
@@ -133,7 +133,7 @@ button {
 }
 
 .yes-button:hover {
-  border: solid black;
+  border: solid #0AFF7C;
   background-color: #0AFF7C;
 }
 
@@ -150,7 +150,7 @@ button {
 }
 
 .delete:hover {
-  border: solid black;
+  border: solid #E68B89;;
   background-color: #E68B89;
 }
 
@@ -181,7 +181,7 @@ button {
 }
 
 .save-buy:hover {
-  border: solid black;
+  border: solid #0AFF7C;
   background-color: #0AFF7C;
 }
 
@@ -197,7 +197,7 @@ button {
 }
 
 .buy-column:hover {
-  border: solid black;
+  border: solid #41C867;
   background-color: #41C867;
 }
 
@@ -237,4 +237,8 @@ button {
   justify-content: flex-start;
   margin-left: 50px;
   margin-top: 10px;
+}
+
+.bottom > a {
+  color: #e5e5e5
 }

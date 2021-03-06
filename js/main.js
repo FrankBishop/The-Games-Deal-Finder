@@ -25,13 +25,13 @@ homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
 noButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', deleteGame);
-window.addEventListener('DOMContentLoaded', focus);
+// window.addEventListener('DOMContentLoaded', focus);
 backButton.addEventListener('click', goBack);
 backButton2.addEventListener('click', goToWatchlist);
 
-function focus() {
-  searchBar.toFocus()
-}
+// function focus() {
+//   searchBar.toFocus()
+// }
 
 function stores() {
   var storesRequest = new XMLHttpRequest();
@@ -337,9 +337,3 @@ function goBack(event) {
     backButton.classList.add('hidden')
     searchResults.className = "search-results";
 }
-
-// function backToWatchlist(event) {
-//   backButton.classList.add('hidden');
-//   watchlistDiv.classList.remove("hidden");
-//   watchlistPrices.className = "hidden";
-// }

@@ -19,6 +19,7 @@ li {
   width: 33.33%;
   margin-right: 5px;
   text-align: left;
+  color: #52b69a;
 }
 
 .price-column {
@@ -149,8 +150,9 @@ li {
   }
 
   .logos {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
+    margin-left: 50px;
   }
 
   .search-results {
