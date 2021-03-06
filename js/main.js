@@ -15,6 +15,7 @@ var yesButton = document.querySelector('.yes-button');
 var emptyWatch = document.querySelector('.empty');
 var loadingSpinner = document.querySelector('.loading-spinner');
 var backButton =  document.querySelector('.back')
+var backButton2 = document.querySelector('.back2')
 
 var storesList = [];
 
@@ -26,6 +27,7 @@ noButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', deleteGame);
 window.addEventListener('DOMContentLoaded', focus);
 backButton.addEventListener('click', goBack);
+backButton2.addEventListener('click', goToWatchlist);
 
 function focus() {
   searchBar.toFocus()
@@ -210,7 +212,7 @@ function addToWatchlist(item) {
 
 
 function buyFromWatch(event) {
-  backButton.classList.remove('hidden')
+  backButton2.classList.remove('hidden')
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(watchlistPrices);
@@ -304,6 +306,7 @@ function switchToWatchlist() {
   logosRow.className = "hidden";
   homePageText.className = "hidden";
   searchForm.className = "search-move";
+  backButton2.classList.add('hidden')
 }
 
 function goToHome(event) {
@@ -316,7 +319,7 @@ function goToHome(event) {
   homePageText.className = "main-text";
   watchlistDiv.className = "hidden";
   watchlistPrices.className = "hidden";
-  searchResults.className= "hidden"
+  searchResults.className= "hidden";
 }
 
 function goToWatchlist(event) {
@@ -330,7 +333,13 @@ function goToWatchlist(event) {
   switchToWatchlist()
 }
 
-function goBack(event){
+function goBack(event) {
     backButton.classList.add('hidden')
     searchResults.className = "search-results";
 }
+
+// function backToWatchlist(event) {
+//   backButton.classList.add('hidden');
+//   watchlistDiv.classList.remove("hidden");
+//   watchlistPrices.className = "hidden";
+// }
