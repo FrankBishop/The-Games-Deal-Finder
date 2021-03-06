@@ -231,3 +231,10 @@ button {
   bottom: 0;
   z-index: -1;
 }
+
+.back-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 50px;
+  margin-top: 10px;
+}
