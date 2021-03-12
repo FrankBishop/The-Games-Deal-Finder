@@ -148,7 +148,7 @@ button {
   justify-content: center;
   text-align: center;
   background-color: #da5552;
-  border-radius: 3px;
+  border-radius: 15px;
   width: 15%;
   margin-top: 18px;
   margin-bottom: 18px;
@@ -177,7 +177,7 @@ button {
 .save-buy {
   height: 64px;
   background-color: #00CC5F;
-  border-radius: 3px;
+  border-radius: 15px;
   margin-top: 18px;
   margin-bottom: 18px;
   display: flex;
@@ -193,7 +193,7 @@ button {
 .buy-column {
   height: 64px;
   background-color: #2b9348;
-  border-radius: 3px;
+  border-radius: 15px;
   margin-top: 18px;
   margin-bottom: 18px;
   display: flex;
@@ -246,4 +246,12 @@ button {
 
 .bottom > a {
   color: #e5e5e5
+}
+
+.price-column {
+  color: #DB5957;
+}
+
+.save {
+  border-radius: 15px;
 }

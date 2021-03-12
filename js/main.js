@@ -1,5 +1,5 @@
 var searchForm = document.querySelector('.search-form');
-var searchBar = document.querySelector('#game-search')
+var searchBar = document.querySelector('#game-search');
 var logosRow = document.querySelector('.logo-images');
 var homePageText = document.querySelector('.main-text');
 var searchResults = document.querySelector('.search-results');
@@ -25,13 +25,13 @@ homeLink.addEventListener('click', goToHome);
 watchlistLink.addEventListener('click', goToWatchlist);
 noButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', deleteGame);
-// window.addEventListener('DOMContentLoaded', focus);
+window.addEventListener('DOMContentLoaded', focusSearch);
 backButton.addEventListener('click', goBack);
 backButton2.addEventListener('click', goToWatchlist);
 
-// function focus() {
-//   searchBar.toFocus()
-// }
+function focusSearch() {
+  searchBar.focus();
+}
 
 function stores() {
   var storesRequest = new XMLHttpRequest();

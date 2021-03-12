@@ -19,7 +19,7 @@ li {
   width: 33.33%;
   margin-right: 5px;
   text-align: left;
-  color: #52b69a;
+  color: #37BE5D;;
 }
 
 .price-column {
@@ -176,8 +176,11 @@ li {
     width: 500px;
   }
 
-  .title-column, .price-column, .buy-column {
+  .title-column, .buy-column {
     font-size: 22px;
   }
 
+  .price-column {
+    font-size: 30px;
+  }
 }
