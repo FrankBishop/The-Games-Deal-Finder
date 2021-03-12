@@ -61,7 +61,7 @@ function submitAction(event) {
   logosRow.className = "hidden";
   homePageText.className = "hidden";
   var searchRequest = searchBar.value;
-  searchForm.reset()
+  searchForm.reset();
   getResults(searchRequest);
 }
 
@@ -78,12 +78,12 @@ function getResults(searchRequest) {
     if (this.response.length === 0) {
       var noResults = document.createElement('h1');
       noResults.textContent = "There are no results for your search"
-      searchResults.appendChild(noResults)
+      searchResults.appendChild(noResults);
     }
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
       searchResults.appendChild(result);
-      result.className = "result-row"
+      result.className = "result-row";
       var thumbnail = document.createElement('img');
       thumbnail.setAttribute('src', this.response[i].thumb);
       result.appendChild(thumbnail);
@@ -93,8 +93,8 @@ function getResults(searchRequest) {
       title.className = 'title-column';
       result.appendChild(title);
       var cheapestPrice = document.createElement('h3');
-      cheapestPrice.textContent = this.response[i].cheapest
-      cheapestPrice.className = 'price-column'
+      cheapestPrice.textContent = this.response[i].cheapest;
+      cheapestPrice.className = 'price-column';
       result.appendChild(cheapestPrice);
       var buyLink = document.createElement('button');
       buyLink.textContent = 'Buy Now';
@@ -103,7 +103,7 @@ function getResults(searchRequest) {
       var gameId = result.setAttribute('gameid', this.response[i].gameID);
       var gameTitle = result.setAttribute('game-title', this.response[i].external);
       var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
-      var imageAttribute = result.setAttribute('image', this.response[i].thumb)
+      var imageAttribute = result.setAttribute('image', this.response[i].thumb);
       var saveButton = document.createElement('button');
       saveButton.textContent = "Save to Watchlist";
       saveButton.className = "save-button save";
@@ -147,7 +147,7 @@ function buyNow(event) {
       var storeName = document.createElement('h2');
       var storeActualName;
       storeName.textContent = storeActualName;
-      storeName.className = 'title-column'
+      storeName.className = 'title-column';
       priceResult.appendChild(storeName);
       var storePrice = document.createElement('h2');
       storePrice.textContent = this.response.deals[i].price;
@@ -160,7 +160,7 @@ function buyNow(event) {
 }
 
 function saveGame(event) {
-  watchlist.nextEntryId++
+  watchlist.nextEntryId++;
   var target = event.target;
   var listing = target.parentNode;
   searchResults.className = "hidden";
@@ -172,9 +172,9 @@ function saveGame(event) {
     entryId: watchlist.nextEntryId
   }
   gameToSave.entryId = watchlist.nextEntryId;
-  watchlist.entries.unshift(gameToSave)
-  addToWatchlist(gameToSave)
-  switchToWatchlist()
+  watchlist.entries.unshift(gameToSave);
+  addToWatchlist(gameToSave);
+  switchToWatchlist();
 }
 
 function addToWatchlist(item) {
@@ -193,7 +193,7 @@ function addToWatchlist(item) {
   watchResult.appendChild(watchTitle);
   var watchCheapestPrice = document.createElement('h3');
   watchCheapestPrice.textContent = item.price;
-  watchCheapestPrice.className = 'price-column'
+  watchCheapestPrice.className = 'price-column';
   watchResult.appendChild(watchCheapestPrice);
   var watchBuyLink = document.createElement('button');
   watchBuyLink.textContent = 'Buy Now';
@@ -204,14 +204,14 @@ function addToWatchlist(item) {
   deleteLink.className = 'delete delete-mini';
   watchResult.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyFromWatch);
-  deleteLink.addEventListener('click', deleteItem)
-  watchResult.setAttribute('entryid', item.entryId)
+  deleteLink.addEventListener('click', deleteItem);
+  watchResult.setAttribute('entryid', item.entryId);
 }
 
 
 function buyFromWatch(event) {
   backButton.classList.add('hidden');
-  backButton2.classList.remove('hidden')
+  backButton2.classList.remove('hidden');
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.classList.remove('hidden');
   removeAllChildNodes(watchlistPrices);
@@ -219,7 +219,7 @@ function buyFromWatch(event) {
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
   var prices = new XMLHttpRequest();
-  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
+  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult);
   prices.responseType = 'json';
   prices.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
@@ -244,7 +244,7 @@ function buyFromWatch(event) {
       var storeName = document.createElement('h2');
       var storeActualName;
       storeName.textContent = storeActualName;
-      storeName.className = 'title-column'
+      storeName.className = 'title-column';
       priceResult.appendChild(storeName);
       var storePrice = document.createElement('h2');
       storePrice.textContent = this.response.deals[i].price;
@@ -261,7 +261,7 @@ function deleteItem(event) {
   deleteModal.className = "modal";
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
-  var deleteTargetEntry = deleteTargetParent.getAttribute('entryid')
+  var deleteTargetEntry = deleteTargetParent.getAttribute('entryid');
   var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
   watchlist.gameToRemove = deleteTargetEntry;
   watchlist.entryToRemove = deleteGameListing;
@@ -274,27 +274,25 @@ function deleteGame(event) {
       if (watchlist.entries[i].entryId == watchlist.gameToRemove) {
         watchlist.entryToRemove.remove();
         gameToDelete = i;
-        watchlist.entries.splice(gameToDelete, 1)
+        watchlist.entries.splice(gameToDelete, 1);
       }
     }
   }
   findIndex();
-  deleteModal.className = "hidden"
+  deleteModal.className = "hidden";
   if (watchlist.entries.length === 0) {
-    emptyWatch.classList.remove("hidden")
+    emptyWatch.classList.remove("hidden");
   }
 }
 
-
-
 function closeModal(event) {
-  deleteModal.className = "hidden"
+  deleteModal.className = "hidden";
 }
 
 function loadWatchlist(event) {
   for (i = watchlist.entries.length - 1; i >= 0; i--) {
     addToWatchlist(watchlist.entries[i]);
-    watchlist.nextEntryId++
+    watchlist.nextEntryId++;
   }
 }
 
@@ -326,12 +324,12 @@ function goToWatchlist(event) {
   backButton.classList.add('hidden');
   backButton2.classList.add('hidden');
   if (watchlist.entries.length === 0) {
-    emptyWatch.classList.remove("hidden")
+    emptyWatch.classList.remove("hidden");
   }
   removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
   removeAllChildNodes(storeListings);
-  switchToWatchlist()
+  switchToWatchlist();
 }
 
 function goBack(event) {

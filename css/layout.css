@@ -30,27 +30,24 @@ li {
   width: 13%;
 }
 
-
 .title-column, .price-column, .buy-column {
   font-size: 18px;
 }
 
-
 @media screen and (max-width: 375px) and (orientation: portrait) {
 
   .header-class {
-  display: flex;
-  background-color: #284D86;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #e5e5e5;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    background-color: #284D86;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #e5e5e5;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .head-text {
-   /* text-align: center; */
-   margin: auto;
+    margin: auto;
   }
 
   .search-button {
@@ -63,8 +60,8 @@ li {
   }
 
   #game-search {
-      width: 80%;
-      text-align: center;
+    width: 80%;
+    text-align: center;
   }
 
   .buy-column, .title-column, .save, .save-buy, .delete {
@@ -78,7 +75,6 @@ li {
   .save {
     font-size: 9.5px;
   }
-
 }
 
 @media screen and (max-width: 568px) and (orientation: landscape) {
@@ -100,24 +96,11 @@ li {
   .search-button {
     margin-top: 5px;
   }
-
 }
 
 @media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
 
-  /* header {
-  background-color: #284D86;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #e5e5e5;
-  }
-
- .head-text {
-  text-align: center;
-  display: block;
- } */
-
- .buy-column, .title-column, .save, .save-buy, .delete, .title-column {
+  .buy-column, .title-column, .save, .save-buy, .delete, .title-column {
     font-size: 15px;
  }
 
@@ -132,7 +115,6 @@ li {
   .logos {
     margin-top: 100px;
   }
-
 }
 
 @media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
@@ -144,7 +126,6 @@ li {
   .price-column {
     font-size: 18px;
   }
-
 }
 
 @media screen and (min-width: 813px) and (max-width: 1024px) {
@@ -156,7 +137,6 @@ li {
   .price-column {
     font-size: 22px;
   }
-
 }
 
 @media screen and (max-width: 1024px) {
@@ -203,9 +183,7 @@ li {
 
   .delete {
     margin: 18px 2px;
-
   }
-
 }
 
 @media screen and (min-width: 1025px) {
@@ -253,11 +231,3 @@ li {
     font-size: 30px;
   }
 }
-
-
-/* //ipad fully functional */
-/* works on iphoneX landscape */
-/* works on all landscapes */
-/* just need iphone 5 and X portraits */
-
-/* maybe change move search */
