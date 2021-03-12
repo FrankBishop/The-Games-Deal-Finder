@@ -307,6 +307,7 @@ function switchToWatchlist() {
   logosRow.className = "hidden";
   homePageText.className = "hidden";
   searchForm.className = "search-move";
+  storeListings.className = "hidden";
   backButton.classList.add('hidden');
   backButton2.classList.add('hidden');
 }
