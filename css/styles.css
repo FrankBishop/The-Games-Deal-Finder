@@ -19,6 +19,7 @@ header {
 main {
   font-size: 24px;
   text-align: center;
+  color: #3D3D3D;
 }
 
 main > p {
@@ -35,6 +36,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   justify-content: space-evenly;
+  margin-top: 75px;
 }
 
 img {
@@ -45,6 +47,7 @@ img {
 button {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
+  color: #3D3D3D;
 }
 
 .search-move {
@@ -57,18 +60,20 @@ button {
 }
 
 #game-search {
-  border: solid #e5e5e5;
+  border: solid #AFAFAF;
   border-radius: 10px;
   height: 40px;
 }
 
 .search-button {
   background-color: #ABBECF;
-  border: solid #284D86;
+  border: solid #AFAFAF;
   font-family: 'Roboto Condensed', sans-serif;
-  height: 40px;
+  height: 35px;
   padding-bottom: 3px;
+  margin-left: 3px;
   box-shadow: 2px 2px 0 #284D86;
+  color: #3D3D3D;
 }
 
 .list-image {
@@ -83,6 +88,7 @@ button {
 .result-row {
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: #5C5C5C;
 }
 
 .save-button {
@@ -97,7 +103,7 @@ button {
 }
 
 .save-button:hover {
-  border: solid #7B9BA3;
+  border: solid #AFAFAF;
   background-color: #7B9BA3;
 }
 
@@ -122,23 +128,23 @@ button {
 
 .no-button {
   background-color: #da5552;
-  box-shadow: 1px 1px 0 #da5552;
-  border-color: #da5552;
+  box-shadow: 1px 1px 0 #AFAFAF;
+  border-color: #AFAFAF;
 }
 
 .no-button:hover {
-  border: solid  #E68B89;
+  border: solid  #AFAFAF;
   background-color: #E68B89;
 }
 
 .yes-button {
   background-color: #00CC5F;
-  box-shadow: 1px 1px 0 #00CC5F;
-  border-color: #00CC5F;
+  box-shadow: 1px 1px 0 #AFAFAF;
+  border-color: #AFAFAF;
 }
 
 .yes-button:hover {
-  border: solid #0AFF7C;
+  border: solid #AFAFAF;
   background-color: #0AFF7C;
 }
 
@@ -155,7 +161,7 @@ button {
 }
 
 .delete:hover {
-  border: solid #E68B89;;
+  border: solid #AFAFAF;
   background-color: #E68B89;
 }
 
@@ -186,7 +192,7 @@ button {
 }
 
 .save-buy:hover {
-  border: solid #0AFF7C;
+  border: solid #AFAFAF;
   background-color: #0AFF7C;
 }
 
@@ -202,7 +208,7 @@ button {
 }
 
 .buy-column:hover {
-  border: solid #41C867;
+  border: solid #AFAFAF;
   background-color: #41C867;
 }
 
