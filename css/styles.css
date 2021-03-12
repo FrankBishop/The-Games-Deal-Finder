@@ -4,11 +4,16 @@ body {
 }
 
 header {
-  text-align: center;
+  display: flex;
   background-color: #284D86;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #e5e5e5;
+  justify-content: space-around;
+}
+
+.head-text {
+  text-align: left;
 }
 
 main {
