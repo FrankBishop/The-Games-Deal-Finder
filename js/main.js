@@ -14,8 +14,8 @@ var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
 var emptyWatch = document.querySelector('.empty');
 var loadingSpinner = document.querySelector('.loading-spinner');
-var backButton =  document.querySelector('.back')
-var backButton2 = document.querySelector('.back2')
+var backButton = document.querySelector('.back');
+var backButton2 = document.querySelector('.back2');
 
 var storesList = [];
 
@@ -68,7 +68,8 @@ function submitAction(event) {
 }
 
 function getResults(searchRequest) {
-  backButton.classList.add('hidden')
+  backButton.classList.add('hidden');
+  backButton2.classList.add('hidden');
   loadingSpinner.classList.remove('hidden');
   searchResults.className = "search-results";
   var search = new XMLHttpRequest();
@@ -76,7 +77,7 @@ function getResults(searchRequest) {
   search.responseType = 'json';
   search.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
-    if(this.response.length === 0){
+    if (this.response.length === 0) {
       var noResults = document.createElement('h1');
       noResults.textContent = "There are no results for your search"
       searchResults.appendChild(noResults)
@@ -113,14 +114,13 @@ function getResults(searchRequest) {
       saveButton.addEventListener('click', saveGame);
     }
   });
-  search.send()
+  search.send();
 }
 
 function buyNow(event) {
-  backButton.classList.remove('hidden')
-  // loadingSpinner.classList.remove('hidden');
-  storeListings.classList.add('hidden')
-  // removeAllChildNodes(storeListings);
+  backButton.classList.remove('hidden');
+  backButton2.classList.add('hidden');
+  storeListings.classList.add('hidden');
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
   var prices = new XMLHttpRequest();
@@ -212,6 +212,7 @@ function addToWatchlist(item) {
 
 
 function buyFromWatch(event) {
+  backButton.classList.add('hidden');
   backButton2.classList.remove('hidden')
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.classList.remove('hidden');
@@ -306,11 +307,13 @@ function switchToWatchlist() {
   logosRow.className = "hidden";
   homePageText.className = "hidden";
   searchForm.className = "search-move";
-  backButton2.classList.add('hidden')
+  backButton.classList.add('hidden');
+  backButton2.classList.add('hidden');
 }
 
 function goToHome(event) {
   backButton.classList.add('hidden');
+  backButton2.classList.add('hidden');
   removeAllChildNodes(storeListings);
   removeAllChildNodes(watchlistPrices);
   removeAllChildNodes(searchResults);
@@ -319,11 +322,12 @@ function goToHome(event) {
   homePageText.className = "main-text";
   watchlistDiv.className = "hidden";
   watchlistPrices.className = "hidden";
-  searchResults.className= "hidden";
+  searchResults.className = "hidden";
 }
 
 function goToWatchlist(event) {
   backButton.classList.add('hidden');
+  backButton2.classList.add('hidden');
   if (watchlist.entries.length === 0) {
     emptyWatch.classList.remove("hidden")
   }
@@ -334,6 +338,7 @@ function goToWatchlist(event) {
 }
 
 function goBack(event) {
-    backButton.classList.add('hidden')
-    searchResults.className = "search-results";
+  backButton.classList.add('hidden');
+  backButton2.classList.add('hidden');
+  searchResults.className = "search-results";
 }
