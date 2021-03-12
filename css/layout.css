@@ -64,12 +64,12 @@ li {
     text-align: center;
   }
 
-  .buy-column, .title-column, .save, .save-buy, .delete {
-    font-size: 12px;
+  .buy-column, .save, .save-buy, .delete {
+    font-size: 10px;
   }
 
-  .price-column {
-    font-size: 15px;
+  .price-column, .title-column {
+    font-size: 12px;
   }
 
   .save {
@@ -79,13 +79,13 @@ li {
 
 @media screen and (max-width: 568px) and (orientation: landscape) {
 
-  .buy-column, .title-column, .save, .save-buy, .delete {
+  .buy-column, .save, .save-buy, .delete {
     font-size: 13px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
-  .price-column {
+  .price-column, .title-column {
     font-size: 16px;
   }
 
@@ -100,11 +100,11 @@ li {
 
 @media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
 
-  .buy-column, .title-column, .save, .save-buy, .delete, .title-column {
+  .buy-column, .save, .save-buy, .delete, .title-column {
     font-size: 15px;
  }
 
-  .price-column {
+  .price-column, .title-column {
     font-size: 18px;
   }
 
@@ -119,23 +119,23 @@ li {
 
 @media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
 
-  .buy-column, .title-column, .save, .save-buy, .delete {
+  .buy-column, .save, .save-buy, .delete {
     font-size: 14px;
   }
 
-  .price-column {
+  .price-column, .title-column {
     font-size: 18px;
   }
 }
 
 @media screen and (min-width: 813px) and (max-width: 1024px) {
 
-  .buy-column, .title-column, .save, .save-buy, .delete {
-    font-size: 16px;
+  .buy-column, .save, .save-buy, .delete {
+    font-size: 18px;
   }
 
-  .price-column {
-    font-size: 22px;
+  .price-column, .title-column {
+    font-size: 24px;
   }
 }
 
@@ -224,11 +224,11 @@ li {
     width: 500px;
   }
 
-  .title-column, .buy-column {
+  .buy-column {
     font-size: 22px;
   }
 
-  .price-column {
+  .title-column, .price-column {
     font-size: 30px;
   }
 }

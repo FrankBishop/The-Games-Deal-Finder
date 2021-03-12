@@ -241,7 +241,7 @@ button {
 .back-buttons {
   display: flex;
   justify-content: flex-start;
-  margin-left: 50px;
+  /* margin-left: 170px; */
   margin-top: 10px;
 }
 
@@ -250,6 +250,7 @@ button {
   color: #3D3D3D;
   background-color: #da5552;
   padding: 5px 5px;
+  /* margin-left: 200px; */
 }
 
 .bottom > a {
