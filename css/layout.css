@@ -50,18 +50,34 @@ li {
 
 @media screen and (max-width: 568px) and (orientation: landscape) {
 
-  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
-    font-size: 11px;
+  .buy-column, .title-column, .save, .save-buy, .delete {
+    font-size: 13px;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .price-column {
+    font-size: 16px;
+  }
+
+  .head-text {
+    margin-left: 5px;
+  }
+
+  .search-button {
+    margin-top: 5px;
   }
 
 }
 
 @media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
 
-  .buy-column, .price-column, .title-column, .save, .save-buy, .delete, .title-column {
+  .buy-column, .title-column, .save, .save-buy, .delete, .title-column {
     font-size: 15px;
+  }
+
+  .price-column {
+    font-size: 18px;
   }
 
   .bottom {
@@ -76,16 +92,24 @@ li {
 
 @media screen and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
 
-  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
-    font-size: 13px;
+  .buy-column, .title-column, .save, .save-buy, .delete {
+    font-size: 14px;
+  }
+
+  .price-column {
+    font-size: 18px;
   }
 
 }
 
 @media screen and (min-width: 813px) and (max-width: 1024px) {
 
-  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
+  .buy-column, .title-column, .save, .save-buy, .delete {
     font-size: 16px;
+  }
+
+  .price-column {
+    font-size: 22px;
   }
 
 }
@@ -184,3 +208,9 @@ li {
     font-size: 30px;
   }
 }
+
+
+/* //ipad fully functional */
+/* works on iphoneX landscape */
+/* works on all landscapes */
+/* just need iphone 5 and X portraits */
