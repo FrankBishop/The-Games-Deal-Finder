@@ -46,12 +46,26 @@ li {
   color: #e5e5e5;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
- }
+  }
 
- .head-text {
-   text-align: center;
- }
+  .head-text {
+   /* text-align: center; */
+   margin: auto;
+  }
+
+  .search-button {
+    margin-top: 10px;
+  }
+
+  .search-form {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  #game-search {
+      width: 80%;
+      text-align: center;
+  }
 
   .buy-column, .title-column, .save, .save-buy, .delete {
     font-size: 12px;
@@ -62,7 +76,7 @@ li {
   }
 
   .save {
-    margin-right: 2px;
+    font-size: 9.5px;
   }
 
 }

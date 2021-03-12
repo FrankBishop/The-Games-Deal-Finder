@@ -58,10 +58,8 @@ function submitAction(event) {
   removeAllChildNodes(storeListings);
   removeAllChildNodes(watchlistPrices);
   watchlistDiv.className = "hidden";
-  searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
-  searchForm.className = "search-move";
   var searchRequest = searchBar.value;
   searchForm.reset()
   getResults(searchRequest);
@@ -303,10 +301,8 @@ function loadWatchlist(event) {
 function switchToWatchlist() {
   watchlistDiv.classList.remove("hidden");
   watchlistResults.classList.remove("hidden");
-  searchForm.className = "hidden";
   logosRow.className = "hidden";
   homePageText.className = "hidden";
-  searchForm.className = "search-move";
   storeListings.className = "hidden";
   backButton.classList.add('hidden');
   backButton2.classList.add('hidden');

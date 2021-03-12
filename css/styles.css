@@ -50,15 +50,6 @@ button {
   color: #3D3D3D;
 }
 
-.search-move {
-  text-align: right;
-  margin-right: 10px;
-  margin-bottom: 25px;
-  margin-top: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 #game-search {
   border: solid #AFAFAF;
   border-radius: 10px;
