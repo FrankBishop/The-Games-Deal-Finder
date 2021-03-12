@@ -92,7 +92,7 @@ button {
 }
 
 .save-button {
-  background-color: #5C7C84;
+  background-color: #93C2F1;
   font-family: 'Roboto Condensed', sans-serif;
   margin-top: 18px;
   margin-bottom: 18px;
@@ -198,7 +198,7 @@ button {
 
 .buy-column {
   height: 64px;
-  background-color: #2b9348;
+  background-color: #00CC5F;
   border-radius: 15px;
   margin-top: 18px;
   margin-bottom: 18px;
@@ -209,7 +209,7 @@ button {
 
 .buy-column:hover {
   border: solid #AFAFAF;
-  background-color: #41C867;
+  background-color: #0AFF7C;
 }
 
 .buy-column, .save-button {

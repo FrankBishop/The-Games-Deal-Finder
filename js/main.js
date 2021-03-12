@@ -342,4 +342,5 @@ function goBack(event) {
   backButton.classList.add('hidden');
   backButton2.classList.add('hidden');
   searchResults.className = "search-results";
+  removeAllChildNodes(storeListings);
 }
