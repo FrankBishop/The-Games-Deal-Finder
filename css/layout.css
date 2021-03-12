@@ -38,8 +38,27 @@ li {
 
 @media screen and (max-width: 375px) and (orientation: portrait) {
 
-  .buy-column, .price-column, .title-column, .save, .save-buy, .delete {
-    font-size: 11px;
+  .header-class {
+  display: flex;
+  background-color: #284D86;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #e5e5e5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+ }
+
+ .head-text {
+   text-align: center;
+ }
+
+  .buy-column, .title-column, .save, .save-buy, .delete {
+    font-size: 12px;
+  }
+
+  .price-column {
+    font-size: 15px;
   }
 
   .save {
@@ -72,9 +91,21 @@ li {
 
 @media screen and (min-width: 376px) and (max-width: 768px) and (orientation: portrait) {
 
-  .buy-column, .title-column, .save, .save-buy, .delete, .title-column {
-    font-size: 15px;
+  /* header {
+  background-color: #284D86;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #e5e5e5;
   }
+
+ .head-text {
+  text-align: center;
+  display: block;
+ } */
+
+ .buy-column, .title-column, .save, .save-buy, .delete, .title-column {
+    font-size: 15px;
+ }
 
   .price-column {
     font-size: 18px;
@@ -214,3 +245,5 @@ li {
 /* works on iphoneX landscape */
 /* works on all landscapes */
 /* just need iphone 5 and X portraits */
+
+/* maybe change move search */
