@@ -20,10 +20,6 @@ main {
   font-size: 24px;
   text-align: center;
   color: #3D3D3D;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 80vh;
 }
 
 main > p {
@@ -40,12 +36,15 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 150px;
+  height: 200px;
 }
 
 img {
   height: 175px;
   width: 175px;
+  object-fit: contain;
 }
 
 button {
@@ -69,6 +68,7 @@ button {
   margin-left: 3px;
   box-shadow: 2px 2px 0 #284D86;
   color: #3D3D3D;
+  border-radius: 15px;
 }
 
 .list-image {
@@ -245,7 +245,7 @@ button {
   margin-top: 10px;
 }
 
-.back, .back2 {
+.backToListings, .backToWatchlist {
   border-radius: 15px;
   color: #3D3D3D;
   background-color: #da5552;
@@ -262,4 +262,8 @@ button {
 
 .save {
   border-radius: 15px;
+}
+
+.logos {
+  object-fit: contain;
 }

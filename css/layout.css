@@ -200,6 +200,7 @@ li {
     height: 200px;
     width: 200px;
     margin-left: 50px;
+    /* object-fit: contain; */
   }
 
   .search-results {

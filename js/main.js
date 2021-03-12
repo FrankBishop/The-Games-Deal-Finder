@@ -14,8 +14,8 @@ var noButton = document.querySelector('.no-button');
 var yesButton = document.querySelector('.yes-button');
 var emptyWatch = document.querySelector('.empty');
 var loadingSpinner = document.querySelector('.loading-spinner');
-var backButton = document.querySelector('.back');
-var backButton2 = document.querySelector('.back2');
+var backButton = document.querySelector('.backToListings');
+var backButton2 = document.querySelector('.backToWatchlist');
 
 var storesList = [];
 
@@ -93,7 +93,7 @@ function getResults(searchRequest) {
       title.className = 'title-column';
       result.appendChild(title);
       var cheapestPrice = document.createElement('h3');
-      cheapestPrice.textContent = this.response[i].cheapest;
+      cheapestPrice.textContent = '$' + this.response[i].cheapest;
       cheapestPrice.className = 'price-column';
       result.appendChild(cheapestPrice);
       var buyLink = document.createElement('button');
@@ -150,7 +150,7 @@ function buyNow(event) {
       storeName.className = 'title-column';
       priceResult.appendChild(storeName);
       var storePrice = document.createElement('h2');
-      storePrice.textContent = this.response.deals[i].price;
+      storePrice.textContent = '$' + this.response.deals[i].price;
       storePrice.className = 'price-column';
       priceResult.appendChild(storePrice);
     }
@@ -192,7 +192,7 @@ function addToWatchlist(item) {
   watchTitle.className = 'title-column';
   watchResult.appendChild(watchTitle);
   var watchCheapestPrice = document.createElement('h3');
-  watchCheapestPrice.textContent = item.price;
+  watchCheapestPrice.textContent = '$' + item.price;
   watchCheapestPrice.className = 'price-column';
   watchResult.appendChild(watchCheapestPrice);
   var watchBuyLink = document.createElement('button');
@@ -247,7 +247,7 @@ function buyFromWatch(event) {
       storeName.className = 'title-column';
       priceResult.appendChild(storeName);
       var storePrice = document.createElement('h2');
-      storePrice.textContent = this.response.deals[i].price;
+      storePrice.textContent = '$' + this.response.deals[i].price;
       storePrice.className = 'price-column';
       priceResult.appendChild(storePrice);
     }
