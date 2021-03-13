@@ -54,14 +54,14 @@ button {
 }
 
 #game-search {
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   border-radius: 10px;
   height: 40px;
 }
 
 .search-button {
   background-color: #ABBECF;
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   font-family: 'Roboto Condensed', sans-serif;
   height: 35px;
   padding-bottom: 3px;
@@ -84,21 +84,24 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #5C5C5C;
+  display: flex;
+  align-items: center;
 }
 
 .save-button {
   background-color: #93C2F1;
   font-family: 'Roboto Condensed', sans-serif;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  /* margin-top: 18px;
+  margin-bottom: 18px; */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 15%;
+  height: 75%;
 }
 
 .save-button:hover {
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   background-color: #7B9BA3;
 }
 
@@ -128,7 +131,7 @@ button {
 }
 
 .no-button:hover {
-  border: solid  #AFAFAF;
+  /* border: solid  #AFAFAF; */
   background-color: #E68B89;
 }
 
@@ -139,7 +142,7 @@ button {
 }
 
 .yes-button:hover {
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
@@ -153,10 +156,11 @@ button {
   width: 15%;
   margin-top: 18px;
   margin-bottom: 18px;
+  height: 75%;
 }
 
 .delete:hover {
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   background-color: #E68B89;
 }
 
@@ -176,18 +180,18 @@ button {
 }
 
 .save-buy {
-  height: 64px;
   background-color: #00CC5F;
   border-radius: 15px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  /* margin-top: 18px;
+  margin-bottom: 18px; */
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 75%;
 }
 
 .save-buy:hover {
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
@@ -195,15 +199,16 @@ button {
   height: 64px;
   background-color: #00CC5F;
   border-radius: 15px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  /* margin-top: 18px;
+  margin-bottom: 18px; */
+  height: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .buy-column:hover {
-  border: solid #AFAFAF;
+  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
