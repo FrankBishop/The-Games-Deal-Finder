@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-A live demo of the application can be found here: https://frankbishop.github.io/ajax-project/
+A live demo of the application can be found here: https://frankbishop.github.io/The-Games-Deal-Finder/
 
 ## Current Features
 
