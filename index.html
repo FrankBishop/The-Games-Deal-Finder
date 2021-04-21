@@ -13,19 +13,23 @@
 </head>
 
 <body>
-  <header>
+  <header class="header-class">
     <h1 class="head-text">The Games Deal Finder</h1>
+    <form class="search-form" action="">
+      <label for="game-search"></label>
+      <input type="search" id="game-search" name="game-search" size="40" required="required">
+      <button class="search-button" type="submit">Search</button>
+    </form>
   </header>
   <main>
     <div class="home">
       <p class="main-text">Just type in the game you want <br>
-        below and we will help you find <br>
+        above and we will help you find <br>
         the cheapest price for it.</p>
-      <form class="search-form" action="">
-        <label for="game-search"></label>
-        <input type="search" id="game-search" name="game-search" size="40" required="required">
-        <button class="search-button" type="submit">Search</button>
-      </form>
+      <div class="back-buttons">
+        <button class="backToListings hidden">Back to Game Listings</button>
+        <button class="backToWatchlist hidden">Back to Game Listings</button>
+      </div>
       <div class="logo-images">
         <img class='logos' src="images\Steam_icon_logo.svg.png" alt="Steam Logo">
         <img class='logos' src="images\circle-cropped.png" alt="Good Old Games Logo">

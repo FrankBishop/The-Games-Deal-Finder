@@ -4,15 +4,22 @@ body {
 }
 
 header {
-  text-align: center;
+  display: flex;
   background-color: #284D86;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: #e5e5e5;
+  justify-content: space-around;
+}
+
+.head-text {
+  text-align: left;
 }
 
 main {
   font-size: 24px;
   text-align: center;
+  color: #3D3D3D;
 }
 
 main > p {
@@ -29,46 +36,44 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   justify-content: space-evenly;
+  align-items: center;
+  margin-top: 150px;
+  height: 200px;
 }
 
 img {
   height: 175px;
   width: 175px;
-  margin: 20px 20px;
+  object-fit: contain;
 }
 
 button {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
-}
-
-.search-move {
-  text-align: right;
-  margin-right: 10px;
-  margin-bottom: 25px;
-  margin-top: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  color: #3D3D3D;
 }
 
 #game-search {
-  border: solid #284D86;
-  border-radius: 3px;
+  /* border: solid #AFAFAF; */
+  border-radius: 10px;
   height: 40px;
 }
 
 .search-button {
   background-color: #ABBECF;
-  border: solid #284D86;
+  /* border: solid #AFAFAF; */
   font-family: 'Roboto Condensed', sans-serif;
-  height: 40px;
+  height: 35px;
   padding-bottom: 3px;
+  margin-left: 3px;
   box-shadow: 2px 2px 0 #284D86;
+  color: #3D3D3D;
+  border-radius: 15px;
 }
 
 .list-image {
   width: 120px;
-  height: 45px;
+  height: 100%;
 }
 
 .search-results > li {
@@ -78,21 +83,25 @@ button {
 .result-row {
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: #5C5C5C;
+  display: flex;
+  align-items: center;
 }
 
 .save-button {
-  background-color: #5C7C84;
+  background-color: #93C2F1;
   font-family: 'Roboto Condensed', sans-serif;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  /* margin-top: 18px;
+  margin-bottom: 18px; */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 15%;
+  height: 75%;
 }
 
 .save-button:hover {
-  border: solid black;
+  /* border: solid #AFAFAF; */
   background-color: #7B9BA3;
 }
 
@@ -117,23 +126,23 @@ button {
 
 .no-button {
   background-color: #da5552;
-  box-shadow: 1px 1px 0 #da5552;
-  border-color: #da5552;
+  box-shadow: 1px 1px 0 #AFAFAF;
+  border-color: #AFAFAF;
 }
 
 .no-button:hover {
-  border: solid black;
-  background-color: #E68B89;;
+  /* border: solid  #AFAFAF; */
+  background-color: #E68B89;
 }
 
 .yes-button {
   background-color: #00CC5F;
-  box-shadow: 1px 1px 0 #00CC5F;
-  border-color: #00CC5F;
+  box-shadow: 1px 1px 0 #AFAFAF;
+  border-color: #AFAFAF;
 }
 
 .yes-button:hover {
-  border: solid black;
+  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
@@ -143,14 +152,15 @@ button {
   justify-content: center;
   text-align: center;
   background-color: #da5552;
-  border-radius: 3px;
+  border-radius: 15px;
   width: 15%;
   margin-top: 18px;
   margin-bottom: 18px;
+  height: 75%;
 }
 
 .delete:hover {
-  border: solid black;
+  /* border: solid #AFAFAF; */
   background-color: #E68B89;
 }
 
@@ -170,35 +180,36 @@ button {
 }
 
 .save-buy {
-  height: 64px;
   background-color: #00CC5F;
-  border-radius: 3px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  border-radius: 15px;
+  /* margin-top: 18px;
+  margin-bottom: 18px; */
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 75%;
 }
 
 .save-buy:hover {
-  border: solid black;
+  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
 .buy-column {
   height: 64px;
-  background-color: #2b9348;
-  border-radius: 3px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  background-color: #00CC5F;
+  border-radius: 15px;
+  /* margin-top: 18px;
+  margin-bottom: 18px; */
+  height: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .buy-column:hover {
-  border: solid black;
-  background-color: #41C867;
+  /* border: solid #AFAFAF; */
+  background-color: #0AFF7C;
 }
 
 .buy-column, .save-button {
@@ -230,4 +241,39 @@ button {
   right: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.back-buttons {
+  display: flex;
+  justify-content: flex-start;
+  /* margin-left: 170px; */
+  margin-top: 10px;
+}
+
+.backToListings, .backToWatchlist {
+  border-radius: 15px;
+  color: #3D3D3D;
+  background-color: #da5552;
+  padding: 5px 5px;
+  /* margin-left: 200px; */
+  /* position: relative;
+
+  left: 200px; */
+  margin-left: 10%;
+}
+
+.bottom > a {
+  color: #e5e5e5
+}
+
+.price-column {
+  color: #DB5957;
+}
+
+.save {
+  border-radius: 15px;
+}
+
+.logos {
+  object-fit: contain;
 }
