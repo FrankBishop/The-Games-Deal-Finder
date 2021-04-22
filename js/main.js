@@ -71,7 +71,7 @@ function getResults(searchRequest) {
   loadingSpinner.classList.remove('hidden');
   searchResults.className = "search-results";
   var search = new XMLHttpRequest();
-  search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
+  search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10');
   search.responseType = 'json';
   search.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
@@ -79,6 +79,11 @@ function getResults(searchRequest) {
       var noResults = document.createElement('h1');
       noResults.textContent = "There are no results for your search"
       searchResults.appendChild(noResults);
+    }
+    if (!this.response) {
+      var serverIssues = document.createElement('h1');
+      serverIssues.textContent = "The server is having connection issues, please try again";
+      searchResults.appendChild(serverIssues);
     }
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
