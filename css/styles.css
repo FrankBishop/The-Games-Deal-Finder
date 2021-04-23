@@ -20,6 +20,7 @@ main {
   font-size: 24px;
   text-align: center;
   color: #3D3D3D;
+  min-height: 40vh;
 }
 
 main > p {
@@ -51,17 +52,16 @@ button {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   color: #3D3D3D;
+  border: none;
 }
 
 #game-search {
-  /* border: solid #AFAFAF; */
   border-radius: 10px;
   height: 40px;
 }
 
 .search-button {
   background-color: #ABBECF;
-  /* border: solid #AFAFAF; */
   font-family: 'Roboto Condensed', sans-serif;
   height: 35px;
   padding-bottom: 3px;
@@ -91,17 +91,9 @@ button {
 .save-button {
   background-color: #93C2F1;
   font-family: 'Roboto Condensed', sans-serif;
-  /* margin-top: 18px;
-  margin-bottom: 18px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 15%;
-  height: 75%;
 }
 
 .save-button:hover {
-  /* border: solid #AFAFAF; */
   background-color: #7B9BA3;
 }
 
@@ -131,7 +123,6 @@ button {
 }
 
 .no-button:hover {
-  /* border: solid  #AFAFAF; */
   background-color: #E68B89;
 }
 
@@ -142,7 +133,6 @@ button {
 }
 
 .yes-button:hover {
-  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
@@ -150,17 +140,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   background-color: #da5552;
-  border-radius: 15px;
-  width: 15%;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  height: 75%;
 }
 
 .delete:hover {
-  /* border: solid #AFAFAF; */
   background-color: #E68B89;
 }
 
@@ -182,8 +165,6 @@ button {
 .save-buy {
   background-color: #00CC5F;
   border-radius: 15px;
-  /* margin-top: 18px;
-  margin-bottom: 18px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,30 +172,18 @@ button {
 }
 
 .save-buy:hover {
-  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
 }
 
 .buy-column {
-  height: 64px;
   background-color: #00CC5F;
-  border-radius: 15px;
-  /* margin-top: 18px;
-  margin-bottom: 18px; */
-  height: 75%;
+  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .buy-column:hover {
-  /* border: solid #AFAFAF; */
   background-color: #0AFF7C;
-}
-
-.buy-column, .save-button {
-  padding-left: 2px;
-  padding-right: 2px;
 }
 
 .loading-spinner {
@@ -246,19 +215,15 @@ button {
 .back-buttons {
   display: flex;
   justify-content: flex-start;
-  /* margin-left: 170px; */
   margin-top: 10px;
 }
 
-.backToListings, .backToWatchlist {
+.backToListings,
+.backToWatchlist {
   border-radius: 15px;
   color: #3D3D3D;
   background-color: #da5552;
   padding: 5px 5px;
-  /* margin-left: 200px; */
-  /* position: relative;
-
-  left: 200px; */
   margin-left: 10%;
 }
 
@@ -270,10 +235,39 @@ button {
   color: #DB5957;
 }
 
-.save {
-  border-radius: 15px;
-}
-
 .logos {
   object-fit: contain;
+}
+
+.button-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.button-holder > button {
+  width: 60px;
+  height: 34px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 15px;
+  border: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .button-holder {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .button-holder > button {
+    height: 60px;
+    align-items: center;
+    margin-left: 10px;
+  }
 }

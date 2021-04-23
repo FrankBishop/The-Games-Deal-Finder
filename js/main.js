@@ -71,7 +71,7 @@ function getResults(searchRequest) {
   loadingSpinner.classList.remove('hidden');
   searchResults.className = "search-results";
   var search = new XMLHttpRequest();
-  search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10')
+  search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10');
   search.responseType = 'json';
   search.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
@@ -79,6 +79,11 @@ function getResults(searchRequest) {
       var noResults = document.createElement('h1');
       noResults.textContent = "There are no results for your search"
       searchResults.appendChild(noResults);
+    }
+    if (!this.response) {
+      var serverIssues = document.createElement('h1');
+      serverIssues.textContent = "The server is having connection issues, please try again";
+      searchResults.appendChild(serverIssues);
     }
     for (var i = 0; i < this.response.length; i++) {
       var result = document.createElement('li');
@@ -96,20 +101,23 @@ function getResults(searchRequest) {
       cheapestPrice.textContent = '$' + this.response[i].cheapest;
       cheapestPrice.className = 'price-column';
       result.appendChild(cheapestPrice);
+      var buttonHolder = document.createElement('div');
+      result.appendChild(buttonHolder);
       var buyLink = document.createElement('button');
-      buyLink.textContent = 'Buy Now';
+      buyLink.textContent = 'Buy';
       buyLink.className = 'buy-column';
-      result.appendChild(buyLink);
-      var gameId = result.setAttribute('gameid', this.response[i].gameID);
-      var gameTitle = result.setAttribute('game-title', this.response[i].external);
-      var gamePrice = result.setAttribute('cheapest-price', this.response[i].cheapest);
-      var imageAttribute = result.setAttribute('image', this.response[i].thumb);
+      buttonHolder.appendChild(buyLink);
+      var gameId = buttonHolder.setAttribute('gameid', this.response[i].gameID);
+      var gameTitle = buttonHolder.setAttribute('game-title', this.response[i].external);
+      var gamePrice = buttonHolder.setAttribute('cheapest-price', this.response[i].cheapest);
+      var imageAttribute = buttonHolder.setAttribute('image', this.response[i].thumb);
       var saveButton = document.createElement('button');
-      saveButton.textContent = "Save to Watchlist";
-      saveButton.className = "save-button save";
-      result.appendChild(saveButton);
+      saveButton.textContent = "Save";
+      saveButton.className = 'save-button';
+      buttonHolder.appendChild(saveButton);
       buyLink.addEventListener('click', buyNow);
       saveButton.addEventListener('click', saveGame);
+      buttonHolder.className = "button-holder button-holder-big";
     }
   });
   search.send();
@@ -182,7 +190,7 @@ function addToWatchlist(item) {
   var watchResult = document.createElement('li');
   watchlistResults.prepend(watchResult);
   watchResult.className = "result-row";
-  var gameIDSave = watchResult.setAttribute('gameid', item.gameID);
+  watchResult.setAttribute('gameid', item.gameID);
   var watchThumbnail = document.createElement('img');
   watchThumbnail.setAttribute('src', item.image);
   watchThumbnail.className = 'list-image picture-column';
@@ -195,19 +203,22 @@ function addToWatchlist(item) {
   watchCheapestPrice.textContent = '$' + item.price;
   watchCheapestPrice.className = 'price-column';
   watchResult.appendChild(watchCheapestPrice);
+  var buttonHolder = document.createElement('div');
+  watchResult.appendChild(buttonHolder);
   var watchBuyLink = document.createElement('button');
-  watchBuyLink.textContent = 'Buy Now';
-  watchBuyLink.className = 'save-buy';
-  watchResult.appendChild(watchBuyLink);
+  watchBuyLink.textContent = 'Buy';
+  buttonHolder.appendChild(watchBuyLink);
   var deleteLink = document.createElement('button');
   deleteLink.textContent = 'Delete';
-  deleteLink.className = 'delete delete-mini';
-  watchResult.appendChild(deleteLink);
+  buttonHolder.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyFromWatch);
   deleteLink.addEventListener('click', deleteItem);
   watchResult.setAttribute('entryid', item.entryId);
+  watchBuyLink.className = 'buy-column';
+  buttonHolder.className = 'button-holder';
+  deleteLink.className = 'delete';
+  buttonHolder.setAttribute('gameid', item.gameID);
 }
-
 
 function buyFromWatch(event) {
   backButton.classList.add('hidden');
@@ -261,7 +272,8 @@ function deleteItem(event) {
   deleteModal.className = "modal";
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
-  var deleteTargetEntry = deleteTargetParent.getAttribute('entryid');
+  var deleteTargetParent2 = deleteTargetParent.parentNode;
+  var deleteTargetEntry = deleteTargetParent2.getAttribute('entryid');
   var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
   watchlist.gameToRemove = deleteTargetEntry;
   watchlist.entryToRemove = deleteGameListing;
