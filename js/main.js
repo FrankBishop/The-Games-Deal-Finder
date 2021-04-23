@@ -190,7 +190,7 @@ function addToWatchlist(item) {
   var watchResult = document.createElement('li');
   watchlistResults.prepend(watchResult);
   watchResult.className = "result-row";
-  var gameIDSave = watchResult.setAttribute('gameid', item.gameID);
+  // var gameIDSave = watchResult.setAttribute('gameid', item.gameID);
   var watchThumbnail = document.createElement('img');
   watchThumbnail.setAttribute('src', item.image);
   watchThumbnail.className = 'list-image picture-column';
@@ -203,19 +203,25 @@ function addToWatchlist(item) {
   watchCheapestPrice.textContent = '$' + item.price;
   watchCheapestPrice.className = 'price-column';
   watchResult.appendChild(watchCheapestPrice);
+  var buttonHolder = document.createElement('div');
+  watchResult.appendChild(buttonHolder);
   var watchBuyLink = document.createElement('button');
-  watchBuyLink.textContent = 'Buy Now';
-  watchBuyLink.className = 'save-buy';
-  watchResult.appendChild(watchBuyLink);
+  watchBuyLink.textContent = 'Buy';
+  // watchBuyLink.className = 'save-buy';
+  buttonHolder.appendChild(watchBuyLink);
   var deleteLink = document.createElement('button');
   deleteLink.textContent = 'Delete';
-  deleteLink.className = 'delete delete-mini';
-  watchResult.appendChild(deleteLink);
+  // deleteLink.className = 'delete delete-mini';
+  buttonHolder.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyFromWatch);
   deleteLink.addEventListener('click', deleteItem);
-  watchResult.setAttribute('entryid', item.entryId);
+  // watchResult.setAttribute('entryid', item.entryId);
+  watchBuyLink.className = 'buy-column';
+  buttonHolder.className = 'button-holder';
+  deleteLink.className = 'delete';
+  buttonHolder.setAttribute('gameid', item.gameID);
+  buttonHolder.setAttribute('entryid', item.entryId);
 }
-
 
 function buyFromWatch(event) {
   backButton.classList.add('hidden');
