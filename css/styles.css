@@ -91,12 +91,12 @@ button {
 .save-button {
   background-color: #93C2F1;
   font-family: 'Roboto Condensed', sans-serif;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   width: 15%;
   height: 75%;
-  border: none;
+  border: none; */
 }
 
 .save-button:hover {
@@ -188,11 +188,9 @@ button {
 }
 
 .buy-column {
-  height: 64px;
   background-color: #00CC5F;
-  border-radius: 15px;
+  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -254,10 +252,6 @@ button {
   color: #DB5957;
 }
 
-.save {
-  border-radius: 15px;
-}
-
 .logos {
   object-fit: contain;
 }
@@ -274,9 +268,11 @@ button {
 
 .button-holder > button {
   width: 60px;
+  height: 34px;
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 15px;
   border: none;
-  background-color: #00CC5F;
 }
+
+
