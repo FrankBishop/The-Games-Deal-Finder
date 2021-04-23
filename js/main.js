@@ -117,7 +117,7 @@ function getResults(searchRequest) {
       buttonHolder.appendChild(saveButton);
       buyLink.addEventListener('click', buyNow);
       saveButton.addEventListener('click', saveGame);
-      buttonHolder.className = "button-holder";
+      buttonHolder.className = "button-holder button-holder-big";
     }
   });
   search.send();
@@ -190,7 +190,7 @@ function addToWatchlist(item) {
   var watchResult = document.createElement('li');
   watchlistResults.prepend(watchResult);
   watchResult.className = "result-row";
-  // var gameIDSave = watchResult.setAttribute('gameid', item.gameID);
+  watchResult.setAttribute('gameid', item.gameID);
   var watchThumbnail = document.createElement('img');
   watchThumbnail.setAttribute('src', item.image);
   watchThumbnail.className = 'list-image picture-column';
@@ -207,20 +207,17 @@ function addToWatchlist(item) {
   watchResult.appendChild(buttonHolder);
   var watchBuyLink = document.createElement('button');
   watchBuyLink.textContent = 'Buy';
-  // watchBuyLink.className = 'save-buy';
   buttonHolder.appendChild(watchBuyLink);
   var deleteLink = document.createElement('button');
   deleteLink.textContent = 'Delete';
-  // deleteLink.className = 'delete delete-mini';
   buttonHolder.appendChild(deleteLink);
   watchBuyLink.addEventListener('click', buyFromWatch);
   deleteLink.addEventListener('click', deleteItem);
-  // watchResult.setAttribute('entryid', item.entryId);
+  watchResult.setAttribute('entryid', item.entryId);
   watchBuyLink.className = 'buy-column';
   buttonHolder.className = 'button-holder';
   deleteLink.className = 'delete';
   buttonHolder.setAttribute('gameid', item.gameID);
-  buttonHolder.setAttribute('entryid', item.entryId);
 }
 
 function buyFromWatch(event) {
@@ -275,7 +272,8 @@ function deleteItem(event) {
   deleteModal.className = "modal";
   var deleteTarget = event.target;
   var deleteTargetParent = deleteTarget.parentNode;
-  var deleteTargetEntry = deleteTargetParent.getAttribute('entryid');
+  var deleteTargetParent2 = deleteTargetParent.parentNode;
+  var deleteTargetEntry = deleteTargetParent2.getAttribute('entryid');
   var deleteGameListing = document.querySelector('[entryid="' + deleteTargetEntry + '"]');
   watchlist.gameToRemove = deleteTargetEntry;
   watchlist.entryToRemove = deleteGameListing;
