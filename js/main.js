@@ -72,6 +72,12 @@ function getResults(searchRequest) {
   searchResults.className = "search-results";
   var search = new XMLHttpRequest();
   search.open('GET', 'https://www.cheapshark.com/api/1.0/games?title=' + searchRequest + '&limit=10');
+  search.onerror = function () {
+    loadingSpinner.classList.add('hidden');
+    var errorMessage = document.createElement('h1');
+    errorMessage.textContent = "Network Error, cannot load results, please try again";
+    searchResults.appendChild(errorMessage);
+  };
   search.responseType = 'json';
   search.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
@@ -130,7 +136,14 @@ function buyNow(event) {
   searchResults.className = "hidden";
   var gameIdResult = this.parentNode.getAttribute("gameid");
   var prices = new XMLHttpRequest();
-  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult)
+  prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult);
+  prices.onerror = function () {
+    loadingSpinner.classList.add('hidden');
+    storeListings.className = "search-results";
+    var errorMessage = document.createElement('h1');
+    errorMessage.textContent = "Network Error, cannot load results, please try again";
+    storeListings.appendChild(errorMessage);
+  };
   prices.responseType = 'json';
   prices.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
@@ -231,6 +244,13 @@ function buyFromWatch(event) {
   var gameIdResult = this.parentNode.getAttribute("gameid");
   var prices = new XMLHttpRequest();
   prices.open("GET", "https://www.cheapshark.com/api/1.0/games?id=" + gameIdResult);
+  prices.onerror = function () {
+    loadingSpinner.classList.add('hidden');
+    watchlistPrices.className = "watchlist-prices";
+    var errorMessage = document.createElement('h1');
+    errorMessage.textContent = "Network Error, cannot load results, please try again";
+    watchlistPrices.appendChild(errorMessage);
+  };
   prices.responseType = 'json';
   prices.addEventListener('load', function () {
     loadingSpinner.classList.add('hidden');
